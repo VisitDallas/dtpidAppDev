@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Post Event Hotel Reimbursement Form</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="postEventFormFinal.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://www.dtpid.com/">Dallas Tourism Public Improvement District</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://www.dtpid.com/">Overview</a></li>
+            <li><a href="http://www.dtpid.com/authorization">Authorization</a></li>
+            <li><a href="http://www.dtpid.com/hotels">Hotels</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Application <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://www.dtpid.com/application/hotels">Hotels</a></li>
+            <li><a href="http://www.dtpid.com/application/events">Events</a></li>
+          </ul>
+        </li>
+      </ul>
+    
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contacts <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://www.dtpid.com/contacts/administration">Administration</a></li>
+            <li><a href="http://www.dtpid.com/contacts/board-of-directors">Board of Directors</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+
+	<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+
+	<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" onsubmit="return javascript:myFunction()">
+
+	<input type=hidden name="oid" value="00D0b000000RDhe">
+	<input type=hidden name="retURL" value="http://www.dtpid.com/thank-you-for-completing-your-post-event-form">
+	
+	<!--Title / Set Form Type-->
+	<div class="form-group">
+		<h1>DTPID Post-Event Reimbursement Form</h1>
+		<fieldset class="hide" readonly>
+			<select id="00N0b000007wAxU" class="form-control" name="00N0b000007wAxU" title="Application_Type">
+				<option value="Event Post-Event">Event Post-Event</option>
+			</select>
+		</fieldset>
+		<p>Submitted 30 days after Event Ends</p>
+	</div>
+	
+	<!-- Event/Contact Information -->
+	<div>
+		<h3>Contact Information:</h3>
+		
+		<div class="form-horizontal">			
+			<div class="form-group">
+				<label for="first_name" class="col-sm-2 control-label">
+					First Name:
+				</label>
+				<div class="col-sm-9">
+					<input id="first_name" class="form-control inLineStart" placeholder="First Name" name="first_name" size="15" type="text" />
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="last_name" class="col-sm-2 control-label">
+					Last Name:
+				</label>
+				<div class="col-sm-9">
+					<input id="last_name" class="form-control" placeholder="Last Name" name="last_name" size="15" type="text" />
+				</div>
+			</div>	
+
+			<div class="form-group">
+				<label for="title" class="col-sm-2 control-label">
+					Title:
+				</label>
+				<div class="col-sm-9">
+					<input  id="title" class="form-control" name="title" size="20" type="text" placeholder="Title" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="email" class="col-sm-2 control-label">
+					Email:
+				</label>
+				<div class="col-sm-9">
+					<input  id="email" class="form-control" placeholder="Email" name="email" size="20" type="text" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="mobile" class="col-sm-2 control-label">
+					Phone:
+				</label>
+				<div class="col-sm-9">
+					<input id="mobile" class="form-control" name="mobile" size="20" type="text" placeholder="Phone" />
+				</div>
+			</div>
+
+			<h3>Organization Information:</h3>
+
+			<div class="form-group">
+				<label for="company" class="col-sm-2 control-label">
+					Name:
+				</label>
+				<div class="col-sm-9">
+					<input id="company" class="form-control" placeholder="Name" name="company" size="40" type="text" />
+				</div>
+			</div>	
+
+			<div class="form-group">
+				<label for="phone" class="col-sm-2 control-label">
+					Phone:
+				</label>
+				<div class="col-sm-9">
+					<input  id="phone" class="form-control" name="phone" size="12" type="text" placeholder="Phone" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="URL" class="col-sm-2 control-label">
+					Website:
+				</label>
+				<div class="col-sm-9">
+					<input  id="URL" class="form-control" name="URL" size="20" type="text" placeholder="Website" />
+				</div>
+			</div>
+
+			<h3>Event Information</h3>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">
+					Event Name:
+				</label>
+				<div class="col-sm-9">			
+					<input id="00N0b000007uwKK" placeholder="Event Name" maxlength="240" class="form-control" name="00N0b000007uwKK" size="47" type="text" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">
+					Event Start Date:
+				</label>
+				<div class="col-sm-3">
+					<input type="text" name="00N0b000007v1mP" id="00N0b000007v1mP" class="form-control" placeholder="mm/dd/yyyy">
+				</div>
+				
+				<label class="col-sm-2 control-label">
+					Event End Date:
+				</label>
+				<div class="col-sm-4">
+					<input type="text" name="00N0b000007v1qc" id="00N0b000007v1qc" class="form-control" placeholder="mm/dd/yyyy">
+				</div>
+			</div>
+
+				<!-- <div class="hide">			
+					<span class="dateInput dateOnlyInput">
+						<input id="00N0b000007v1mP" name="00N0b000007v1mP" size="12" class="form-control" placeholder="mm/dd/yyyy" type="text" required/>
+					</span>
+				</div> -->
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">
+					OCA Funding:
+				</label>
+				<div class="col-sm-9">
+					<input  id="00N0b00000Bw1rS" name="00N0b00000Bw1rS" type="checkbox" value="0" />
+				</div>
+			</div>
+		</div>
+ 	</div>
+
+ 	<!-- Calculate TPID Funding-->
+ 	<div class="form-inline">
+ 		<h3>Calculated Eligible DTPID Funded Amount Based on Actualized Performance:</h3>
+ 		<p>Use the SAME method of computing the actual incremental room night code and fill in the appropriate blank:</p>
+ 		<ul>
+ 			<li>
+ 				<label>Post Event DTPID Estimation Choice:</label>
+	 			<select  id="00N0b000009gtNd" name="00N0b000009gtNd" class="form-control" title="Post Event TPID Estimation Choice" required>
+		 			<option value="">None</option>
+		 			<option value="Attendance Numbers">Attendance Numbers</option>
+		 			<option value="Hotel Booking Code">Hotel Booking Code</option>
+					<option value="Ticket Sales/Registration">Ticket Sales/Registration</option>
+				</select>
+ 			</li>
+
+ 			<!-- Displays for estimation calculations -->
+ 			<li id="estimationChoice0">Please pick an estimation Choice.</li>
+ 			<li id="estimationChoice1" class="hide">Actual total number of attendees of the event multipled by factor</li>
+			<li id="estimationChoice2" class="hide">Actual number of trackable Hotel room nights through Hotel Booking Codes</li>
+			<li id="estimationChoice3" class="hide">Actual total number of ticket sales sold or registrations from outside of the DFW Metropolitan Statistical Area (MSA) multiplied by factor.</li>
+
+			<li id="estimationCalculation" class="hide">
+				<!-- <label>Post Event DTPID Number Input:</label> -->
+				<input id="00N0b000009gtUX" name="00N0b000009gtUX" class="form-control" size="20" type="text" placeholder="e.g. 12345" />
+				<p class="inLineStart">x <span id="estimationChoiceFactorDisplay">0</span> = <span id="estimationChoiceResultDisplay">0</span> Total Room Nights</p>
+			</li>
+	 	</ul>
+ 	</div>
+
+ 	<div>
+ 		<h3>Let's do the Math:</h3>
+ 		<ul>
+ 			<li>Your actual number of <strong>Hotel Room Nights</strong> as determined above</li>
+ 			<li>Multiplied by <strong>Average Hotel Rate</strong> (use $168 per night or your Booking Code Rate) to get <strong>Total Revenue</strong></li>
+ 			<li>Divide <strong>Total Revenue</strong> by 10 to get the 10:1 required ROI = <strong>Final Eligible DTPID Amount</strong></li>
+ 		</ul>
+ 		<div class="biggerFont form-group form-inline">
+ 	 		<p class="inLineStart"><strong>Hotel Room Nights</strong></p>
+	 		<p class="inLineStart">
+	 			<!-- Post App Hotel Room Nights: -->
+	 			<input  id="00N0b000009gtVs" class="form-control" name="00N0b000009gtVs" size="7" type="text" value="0" readonly/>
+	 		</p>
+	 		<p class="inLineStart" style="margin-right: 0px;">x <strong>Avg. Room Rate </strong>$</p>
+	 		<p class="inLineEnd">	
+	 			<!-- Post App Hotel Room Rate: -->
+	 			<input id="00N0b000009gtXE" class="form-control" name="00N0b000009gtXE" size="3" type="text" value="168" readonly/>
+			</p>
+	 		<p class="inLineEnd" style="margin-right: 0px;">= <strong>Total Revenue $<span id="totalRevenueDisplay">0</span> </strong><i class="fas fa-divide"></i><strong> 10 (for ROI)</strong> =</p>		
+ 		</div>
+ 		<div class="center">
+ 			<p class="highlight">$ <span id="finalDTPIDAmountDisplay">0</span><strong> Final Eligible DTPID Amount</strong></p> 			
+ 		</div>
+
+ 		<div>
+ 			<h4>Maximum Amount per Fiscal Year Allowed: $35,000</h4>
+ 			<div class="form-group">
+ 				<label class="col-sm-2 control-label">DTPID Funds Requested:</label>
+ 				<div class="col-sm-9">
+ 					<input  id="00N0b00000BQW8e" class="form-control" name="00N0b00000BQW8e" size="20" value="0" type="text" />
+ 				</div>
+ 			</div>
+ 		</div>
+ 		<br>
+ 		<br>
+ 	</div>
+
+ 	<!-- DTPID Funds Chart -->
+ 	<div>
+ 		<h3>DTPID Funds:</h3>
+ 		<p>Please complete the "Calculated Eligible DTPID Funded Amount Based on Actualized Performance" before filling in this section</p>
+ 		<table class="table table-bordered tableBorderSet">
+ 			<tr>
+ 				<td>DTPID Funds Pre-Approved (as stated in approval letter):</td>
+ 				<td>
+ 					<div class="form-inline">
+ 						<label>$</label>
+ 						<input type="text" class="form-control" name="dtpidFundsPreApproved" id="dtpidFundsPreApproved" size="7" value="0" placeholder="12345" required>
+ 					</div>
+ 				</td>
+ 			</tr>
+ 			<tr>
+ 				<td>DTPID Funds Available (actual performance-based calc):</td>
+ 				<td><p><strong>$</strong><span id="dtpidFundsAvailableDisplay">0</span></p></td>
+ 			</tr>
+ 			<tr>
+ 				<td>Less Any Advance Payment (Non-Profit Organizations):</td>
+ 				<td>
+ 					<div class="form-inline">
+ 						<label>$</label>
+ 						<!-- Partial Funded Amount: -->
+ 						<input id="00N0b00000899kp" class="form-control" name="00N0b00000899kp" size="7" value="0" type="text" />
+ 					</div>
+ 				</td>
+ 			</tr>
+ 			<tr>
+ 				<td>Final Payment Due</td>
+ 				<td>
+ 					<div class="form-inline">
+ 						<label>$</label>
+ 						<!-- Final Funded Amount: -->
+ 						<input id="00N0b00000ABjFv" class="form-control" name="00N0b00000ABjFv" size="7" value="0" type="text" readonly />
+ 					</div>
+ 				</td>
+ 			</tr>
+ 		</table>
+ 	</div>
+
+ 	<!-- Event Budget Information -->
+	<div>
+		<h3>Event Budget Information:</h3>
+		<p>Please complete the "Total Event Budget" field</p>
+		<table class="table table-bordered form-inline">
+			<tbody>
+				<tr>
+					<td>Total Event Budget</td>
+					<td>
+						<strong>$</strong>
+						<!-- Hotel Post Total Other: -->
+						<input id="00N0b00000APyfT" class="form-control" name="00N0b00000APyfT" size="9" type="text" value="0" required/>
+					</td>
+				</tr>
+				<tr>
+					<td>Total DTPID Funds ($35,000 max): </td>
+					<td><strong>$</strong><span id="totalDTPIDFundsDisplay">0</span></td>
+				</tr>
+				<tr>
+					<td>DTPID as a % of Total (35% max):</td>
+					<td><span id="percentDTPIDTotalDisplay">0</span><strong>%</strong></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h3>How you spent the DTPID Dollars:</h3>
+		<p>Make sure that "Total DTPID Funds" and "Final Eligible DTPID Amount" are equal. Use all fields that apply.</p>
+		<!-- Breakdown of Spending Categories -->
+		<table class="table table-bordered form-inline">
+			<tbody>
+				<tr>
+					<td>Event Marketing: </td>
+					<td>
+						<div class="form-inline">
+							<label>$</label>
+								<!-- Hotel Post Dollar Advertising Marketing:-->
+								<input id="00N0b00000APpKT" class="form-control" value="0" name="00N0b00000APpKT" size="8" type="text"/>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>Event Staffing:</td>
+					<td>
+						<div class="form-inline">
+							<label>$</label>
+							<!-- Hotel Post Dollar Web Staffing: -->
+							<input id="00N0b00000APrKd" class="form-control" value="0" name="00N0b00000APrKd" size="8" type="text" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>Event Production:</td>
+					<td>
+						<div class="form-inline">
+							<label>$</label>
+							<!-- Hotel Post Dollar Research Production -->
+							<input id="00N0b00000APr5I" class="form-control" value="0" name="00N0b00000APr5I" size="8" type="text"/>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="form-inline">
+							Other (fill in explanation):
+							<!-- Hotel Post Other Budget Explanation: -->
+							<input  id="00N0b00000AQ0Jh" class="form-control" maxlength="40" name="00N0b00000AQ0Jh" size="20" type="text" />
+						</div>
+					</td>
+					<td>
+						<div class="form-inline">
+							<label>$</label>
+							<!-- Hotel Post Dollar Other: -->
+							<input id="00N0b00000BgxJt" class="form-control" value="0" name="00N0b00000BgxJt" size="8" type="text" />	
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><label>Total DTPID Funds:</label></td>
+					<td>
+						<p><strong>$</strong><span id="summedDTPIDFundsDisplay">0</span></p>
+						<p id="matchPromptTotalDisplay1" class="hide">Please match this number to Final Eligible DTPID Amount: $<span id="matchPromptTotalDisplay2">0</span></p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p class="center">Applicant, when submitting this Event Application Package, acknowledges the information contained herein as accurate and agrees to review of all related event materials and final support documentation prior to DTPID payment.</p>
+		<br>
+	</div>	
+
+	<div>
+		<label>Brief Event Actual Results:</label>
+		<textarea  id="00N0b00000ABqE9" class="form-control" name="00N0b00000ABqE9" rows="25" type="text" wrap="soft" required></textarea>
+		<p style="text-align: center;">Please add additional information to 'tell the story'</p>
+		<br>
+
+		<label>Describe how DTPID funds were used to increase attendance:</label>
+		<textarea  id="00N0b00000ABqEE" class="form-control" name="00N0b00000ABqEE" rows="25" type="text" wrap="soft" required></textarea><br>
+	</div>
+
+	<p class="disclaimer"><strong>If you have any questions, please contact Maribeth Lysen at (214) 571-1028 or <a href="mailto:maribeth@visitdallas.com">Maribeth@visitdallas.com</a></strong></p>
+
+	<div>
+		<p class="center, disclaimer"><strong>Please send the supplemental documents as an attachment to <a href="#" onclick="javascript:myFunction(); return false;">Maribeth@VisitDallas.com</a></strong></p>
+		<br>
+	</div>
+
+	<p class="disclaimer"><strong>Print this screen for your records before submitting. (Control+P or Command+P)</strong></p>
+
+	<input class="btn btn-primary btn-lg btn-block" id="submit" type="submit" name="submit" disabled onclick="javascript:myFunction()"> 
+</form>
+
+<!-- add line about exceeded amount -->
+
+<script type="text/javascript" src="postEventFormFinal.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

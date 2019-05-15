@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DTPID Pre Event Form Submission</title>
+	<!-- <link rel="stylesheet" type="text/css" href="bootstrap.css"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="preEventFormFinal.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://www.dtpid.com/">Dallas Tourism Public Improvement District</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://www.dtpid.com/">Overview</a></li>
+            <li><a href="http://www.dtpid.com/authorization">Authorization</a></li>
+            <li><a href="http://www.dtpid.com/hotels">Hotels</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Application <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://www.dtpid.com/application/hotels">Hotels</a></li>
+            <li><a href="http://www.dtpid.com/application/events">Events</a></li>
+          </ul>
+        </li>
+      </ul>
+    
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contacts <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://www.dtpid.com/contacts/administration">Administration</a></li>
+            <li><a href="http://www.dtpid.com/contacts/board-of-directors">Board of Directors</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+
+	<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+
+	<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"  method="POST">
+
+		<input type=hidden name="oid" value="00D0b000000RDhe">
+		<input type=hidden name="retURL" value="http://www.dtpid.com/thank-you-for-submitting-your-request">
+
+		<!-- Introduction to the Form --> 
+		<div class="form-group form-inline">
+			<h1>DTPID Pre Event Form Submission</h1>
+			<div class="hide">
+				<label>
+					Application_Type:
+				</label>
+				<select  id="00N0b000007wAxU" class="form-control" name="00N0b000007wAxU" title="Application_Type">
+					<option value="Event Pre-Event">Event Pre-Event</option>
+				</select>
+			</div>
+			<p>Complete 60 days before event</p>
+		</div>
+		
+		<!-- Contact Information -->
+		<div class="form-horizontal">
+			<h3>Contact Information:</h3>
+			
+			<!-- First Row -->
+			<div class="form-group">
+
+				<label for="first_name" class="col-sm-2 control-label">
+					First Name:
+				</label>
+				<div class="col-sm-9">
+					<input  id="first_name" class="form-control" name="first_name" size="20" type="text" placeholder="First Name" required/>
+				</div>
+			</div>	
+
+			<div class="form-group">
+				<label for="last_name" class="col-sm-2 control-label">
+					Last Name:
+				</label>
+				<div class="col-sm-9">
+					<input  id="last_name" class="form-control" name="last_name" size="20" type="text" placeholder="Last Name" required/>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="title" class="col-sm-2 control-label">
+					Title:
+				</label>
+				<div class="col-sm-9">
+					<input  id="title" class="form-control" name="title" size="20" type="text" placeholder="Title" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="email" class="col-sm-2 control-label">
+					Email:
+				</label>
+				<div class="col-sm-9">
+					<input  id="email" class="form-control" name="email" size="20" type="text" placeholder="Email" required/>
+				</div>
+			</div>		
+
+			<!-- Third Row -->
+			
+			<div class="form-group">
+				<label for="mobile" class="col-sm-2 control-label">
+					Phone:
+				</label>
+				<div class="col-sm-9">
+					<input id="mobile" class="form-control phone" name="mobile" size="20" type="text" placeholder="Phone" />
+				</div>
+			</div>
+
+			<!-- Third Row -->
+
+			<h3>Organization Information:</h3>
+
+			<div class="form-group">
+				<label for="company" class="col-sm-2 control-label">
+					Name:
+				</label>
+				<div class="col-sm-9">
+					<input  id="company" class="form-control orgInfo" name="company" size="40" type="text" placeholder="Name" required/>
+				</div>
+			</div>
+
+			<!-- Fourth Row -->
+			<div class="form-group">
+
+				<label for="street" class="col-sm-2 control-label">
+					Street:
+				</label>
+				<div class="col-sm-9">
+					<textarea name="street" id="street" class="form-control orgInfo" rows="2" placeholder="Street" required></textarea>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="city" class="col-sm-2 control-label">
+					City:
+				</label>
+				<div class="col-sm-2">
+					<input  id="city" class="form-control orgInfo" name="city" size="20" type="text" value="Dallas"/>
+				</div>
+				
+				<!-- <label for="state" class="col-sm-2 control-label">
+					State:
+				</label> -->
+				<div>
+					<input  id="state" class="form-control hide orgInfo" name="state" size="3" type="text"/>
+				</div>
+
+				<label class="col-sm-1 control-label">
+					State:
+				</label>
+				<div class="col-sm-2">
+					<select  id="statePicklist" class="form-control" name="statePicklist" title="Event Venue State">
+						<option value="Texas">Texas</option>
+						<option value="Alabama">Alabama</option>
+						<option value="Alaska">Alaska</option>
+						<option value="Arizona">Arizona</option>
+						<option value="Arkansas">Arkansas</option>
+						<option value="California">California</option>
+						<option value="Colorado">Colorado</option>
+						<option value="Connecticut">Connecticut</option>
+						<option value="Delaware">Delaware</option>
+						<option value="Florida">Florida</option>
+						<option value="Georgia">Georgia</option>
+						<option value="Hawaii">Hawaii</option>
+						<option value="Idaho">Idaho</option>
+						<option value="Illinois">Illinois</option>
+						<option value="Indiana">Indiana</option>
+						<option value="Iowa">Iowa</option>
+						<option value="Kansas">Kansas</option>
+						<option value="Kentucky">Kentucky</option>
+						<option value="Louisiana">Louisiana</option>
+						<option value="Maine">Maine</option>
+						<option value="Maryland">Maryland</option>
+						<option value="Massachusetts">Massachusetts</option>
+						<option value="Michigan">Michigan</option>
+						<option value="Minnesota">Minnesota</option>
+						<option value="Mississippi">Mississippi</option>
+						<option value="Missouri">Missouri</option>
+						<option value="Montana">Montana</option>
+						<option value="Nebraska">Nebraska</option>
+						<option value="Nevada">Nevada</option>
+						<option value="New Hampshire">New Hampshire</option>
+						<option value="New Jersey">New Jersey</option>
+						<option value="New Mexico">New Mexico</option>
+						<option value="New York">New York</option>
+						<option value="North Carolina">North Carolina</option>
+						<option value="North Dakota">North Dakota</option>
+						<option value="Ohio">Ohio</option>
+						<option value="Oklahoma">Oklahoma</option>
+						<option value="Oregon">Oregon</option>
+						<option value="Pennsylvania">Pennsylvania</option>
+						<option value="Rhode Island">Rhode Island</option>
+						<option value="South Carolina">South Carolina</option>
+						<option value="South Dakota">South Dakota</option>
+						<option value="Tennessee">Tennessee</option>
+						<option value="Utah">Utah</option>
+						<option value="Vermont">Vermont</option>
+						<option value="Virginia">Virginia</option>
+						<option value="Washington">Washington</option>
+						<option value="West Virginia">West Virginia</option>
+						<option value="Wisconsin">Wisconsin</option>
+						<option value="Wyoming">Wyoming</option>
+					</select>
+				</div>
+
+				<label for="zip" class="col-sm-1 control-label">
+					Zip:
+				</label>
+				<div class="col-sm-3">
+					<input  id="zip" class="form-control orgInfo" name="zip" size="8" type="text" placeholder="Zip" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="phone" class="col-sm-2 control-label">
+					Phone:
+				</label>
+				<div class="col-sm-9">
+					<input  id="phone" class="form-control phone" name="phone" size="12" type="text" placeholder="Phone" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="URL" class="col-sm-2 control-label">
+					Website:
+				</label>
+				<div class="col-sm-9">
+					<input  id="URL" class="form-control" name="URL" size="20" type="text" placeholder="Website" />
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Event Information -->
+		<div class="form-horizontal">
+			<h3>Event Information:</h3>
+			
+			<!-- First Row -->
+			<div class="form-group">
+				<label class="col-sm-2 control-label">
+					Event Name:
+				</label>
+				<div class="col-sm-9">
+					<input  id="00N0b000007uwKK" class="form-control" name="00N0b000007uwKK" size="80" type="text" placeholder="Event Name" required/>
+				</div>
+					
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">
+					Event Start Date:
+				</label>
+				<div class="col-sm-3">
+					<input type="text" name="00N0b000007v1mP" id="00N0b000007v1mP" class="form-control" placeholder="mm/dd/yyyy">
+				</div>
+				
+				<label class="col-sm-2 control-label">
+					Event End Date:
+				</label>
+				<div class="col-sm-4">
+					<input type="text" name="00N0b000007v1qc" id="00N0b000007v1qc" class="form-control" placeholder="mm/dd/yyyy">
+				</div>
+			</div>
+			
+			<!-- Second Row -->
+			<!-- <div class="form-group form-inline hide">
+				<label>
+					Event Start Date:
+				</label>
+				<span class="dateInput dateOnlyInput">
+					<input  id="00N0b000007v1mP" class="form-control" name="00N0b000007v1mP" placeholder="mm/dd/yyyy" size="12" type="text" required/>
+				</span>
+
+				<label>
+					Event End Date:	
+				</label>
+				<span class="dateInput dateOnlyInput">
+					<input  id="00N0b000007v1qc" class="form-control" name="00N0b000007v1qc" placeholder="mm/dd/yyyy" size="12" type="text" required/>
+				</span>
+			</div> -->
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">
+					Previous DTPID Funding:
+				</label>
+				<div class="col-sm-3">
+					<input id="00N0b000007v1qm" class="form-control" name="00N0b000007v1qm" type="checkbox" value="1" />
+				</div>
+				
+				<label class="hide col-sm-2 control-label" id="labelTimesFunded">
+					# of times funded:	
+				</label>
+				<div class="col-sm-4">
+					<input  id="00N0b000007v56k" class="form-control hide" name="00N0b000007v56k" size="5" type="text" value="0" />
+				</div>
+				
+			</div>
+
+			<div class="form-group">
+					<label class="col-sm-2 control-label">
+						OCA Funding:
+					</label>
+					<div class="col-sm-9">
+						<input  id="00N0b00000Bw1rS" name="00N0b00000Bw1rS" type="checkbox" value="0" />
+					</div>
+				</div>
+
+			<h3>Event Venue:</h3>
+
+			<div class="form-group">
+				
+
+				<label class="col-sm-2 control-label">
+					Check if Event Venue is different from Organization.
+				</label>	
+
+				<div class="col-sm-3">
+					<input id="locationCheck" class="form-control" name="LocationCheck" type="checkbox" value="0" />
+				</div>
+				
+		</div>
+			
+		<div class="form-horizontal">
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Event Venue:</label>
+
+				<div class="col-sm-9">
+					<input  id="00N0b00000BOCDc" class="form-control eventLocation" name="00N0b00000BOCDc" size="50" type="text" readonly />
+				</div>
+			</div>
+
+			<div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Address:</label>
+					<div class="col-sm-9">
+						<textarea  id="00N0b00000Bu9Vk" class="form-control eventLocation" name="00N0b00000Bu9Vk" type="text" wrap="soft" readonly></textarea>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">City:</label>
+					<div class="col-sm-2">
+						<input  id="00N0b00000Bu9Xl" class="form-control eventLocation" name="00N0b00000Bu9Xl" size="20" type="text" value="Dallas" readonly/>
+					</div>
+
+					<label class="col-sm-1 control-label">State:</label>
+					<div class="col-sm-2">
+						<select  id="00N0b00000Bu9Vp" class="form-control eventLocation" name="00N0b00000Bu9Vp" title="Event Venue State" readonly>
+						<option value="Texas">Texas</option>
+						<option value="Alabama">Alabama</option>
+						<option value="Alaska">Alaska</option>
+						<option value="Arizona">Arizona</option>
+						<option value="Arkansas">Arkansas</option>
+						<option value="California">California</option>
+						<option value="Colorado">Colorado</option>
+						<option value="Connecticut">Connecticut</option>
+						<option value="Delaware">Delaware</option>
+						<option value="Florida">Florida</option>
+						<option value="Georgia">Georgia</option>
+						<option value="Hawaii">Hawaii</option>
+						<option value="Idaho">Idaho</option>
+						<option value="Illinois">Illinois</option>
+						<option value="Indiana">Indiana</option>
+						<option value="Iowa">Iowa</option>
+						<option value="Kansas">Kansas</option>
+						<option value="Kentucky">Kentucky</option>
+						<option value="Louisiana">Louisiana</option>
+						<option value="Maine">Maine</option>
+						<option value="Maryland">Maryland</option>
+						<option value="Massachusetts">Massachusetts</option>
+						<option value="Michigan">Michigan</option>
+						<option value="Minnesota">Minnesota</option>
+						<option value="Mississippi">Mississippi</option>
+						<option value="Missouri">Missouri</option>
+						<option value="Montana">Montana</option>
+						<option value="Nebraska">Nebraska</option>
+						<option value="Nevada">Nevada</option>
+						<option value="New Hampshire">New Hampshire</option>
+						<option value="New Jersey">New Jersey</option>
+						<option value="New Mexico">New Mexico</option>
+						<option value="New York">New York</option>
+						<option value="North Carolina">North Carolina</option>
+						<option value="North Dakota">North Dakota</option>
+						<option value="Ohio">Ohio</option>
+						<option value="Oklahoma">Oklahoma</option>
+						<option value="Oregon">Oregon</option>
+						<option value="Pennsylvania">Pennsylvania</option>
+						<option value="Rhode Island">Rhode Island</option>
+						<option value="South Carolina">South Carolina</option>
+						<option value="South Dakota">South Dakota</option>
+						<option value="Tennessee">Tennessee</option>
+						<option value="Utah">Utah</option>
+						<option value="Vermont">Vermont</option>
+						<option value="Virginia">Virginia</option>
+						<option value="Washington">Washington</option>
+						<option value="West Virginia">West Virginia</option>
+						<option value="Wisconsin">Wisconsin</option>
+						<option value="Wyoming">Wyoming</option>
+					</select>
+					</div>
+					
+					<label class="col-sm-1 control-label">Zip:</label>
+					<div class="col-sm-3">
+						<input  id="00N0b00000BOCDh" class="form-control eventLocation" name="00N0b00000BOCDh" placeholder="eg.75201" size="20" type="text" readonly/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div>
+				<h3>How to Estimate DTPID Funded Amount:</h3>
+				<p>Select ONE method of computing the anticipated incremental room night code and fill in the appropriate blank:</p>
+			</div>
+
+		<div class="form-horizontal">
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Pre Event DTPID Estimation Choice:</label>
+				<div class="col-sm-9">
+					<select id="00N0b000007v5C5" class="form-control" name="00N0b000007v5C5" title="Pre Event TPID Estimation Choice">
+					<option value="">--None--</option>
+					<option value="Attendance Numbers">Attendance Numbers</option>
+					<option value="Hotel Booking Code">Hotel Booking Code</option>
+					<option value="Ticket Sales / Registration">Ticket Sales / Registration</option>
+				</select>
+				</div>
+			</div>
+		</div>
+			
+			<div class="form-group">
+				<div class="col-sm-1">
+				
+				</div>
+				<div class="col-sm-11">
+				<ul>
+					<li id="estimationChoice0">Please Choose an option</li>
+					<li id="estimationChoice1" class="hide">Estimated total number of attendees of the event multiplied by factor.</li>
+					<li id="estimationChoice2" class="hide">Estimated number of trackable hotel room nights through hotel booking codes.</li>
+					<li id="estimationChoice3" class="hide">Estimated total number of ticket sales sold or registartions from outside of the DFW Metropolitan Statistical Area (MSA) multiplied by factor.</li>					
+					<li id="estimationResult" class="hide">
+						<!-- Pre Event DTPID Number Input: -->
+						<div class="col-sm-2 noPaddingRight">
+						<input  id="00N0b000007vPGg" class="form-control" name="00N0b000007vPGg" type="text" required/>
+						</div>
+						<div class="col-sm-10 noPaddingLeft">
+						<p  class="inLine"> x <span id="estimationChoiceFactorDisplay">0</span> = <span id="estimationChoiceResultDisplay">0</span> Total Room Nights</p>	
+						</div>
+					</li>
+				</ul>				
+				</div>
+			</div>
+		</div>
+		</div>	
+
+		<!-- Math section -->
+		<div>
+			<div>
+				<h3>Let's do the Math:</h3>
+				<ul>
+					<li>Your anticipated number of <strong>Hotel Room Nights</strong> as determined above</li>
+					<li>Multiplied by <strong>Average Hotel Rate</strong> <em>(use $168 per night or your Booking Code Rate)</em> to get <strong>Total Revenue</strong></li>
+					<li>Divide <strong>Total Revenue</strong> by 10 to get the 10:1 required ROI = <strong>Maximum Eligible DTPID Amount</strong></li>
+				</ul>
+			</div>
+
+			<div class="form-group form-inline biggerFont">
+				<p class="inLine">Hotel Room Nights </p>
+				<!-- Pre App Hotel Room Nights: -->
+				<input  id="00N0b000009got7" class="form-control inLine" name="00N0b000009got7" size="8" type="text" readonly />
+				<p class="inLine">x Avg. Room Rate  $</p>
+				<!-- Pre App Hotel Room Rate: -->
+				<input  id="00N0b000009gotC" class="form-control inLine" name="00N0b000009gotC" size="3" type="text" value="168" readonly required/>
+				<p class="inLine"> = Total Revenue $<span id="totalRevenueDisplay">0</span> <i class="fas fa-divide"></i> 10 (for ROI)</p>
+			</div>
+			<div>	
+			<p class="highlight">= $<span id="finalDTPIDAmountDisplay">0</span> Maximum Eligible DTPID Amount</p>
+			</div>
+		</div>
+		<div>
+			<h4>Maximum Amount per Fiscal Year Allowed: $35,000</h4>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">DTPID Funds Requested:</label>
+				<div class="col-sm-9">
+					<input  id="00N0b00000BQW8Z" class="form-control" name="00N0b00000BQW8Z" size="20" type="text" value="0" />
+				</div>
+			</div>
+			<br>
+			<br>
+		</div>
+
+		<!-- Event Budget Section -->
+		<div>
+			<h3>Event Budget:</h3>
+			<table class="table table-bordered form-group form-inline">
+				<thead>
+					<th colspan="2">Total Event Budget</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Total Event Budget</td>
+						<td>
+							<!-- Hotel Pre Total Other: -->
+							<label class="inLine">$</label>
+							<input  id="00N0b0000089SIP" class="inLine form-control" name="00N0b0000089SIP" size="20" type="text" value="0" />
+						</td>
+					</tr>
+					<tr>
+						<td>Total DTPID Funds ($35,000 Max)</td>
+						<td><label>$</label><span id="totalDTPIDFundsDisplay">0</span></td>
+					</tr>
+					<tr>
+						<td>DTPID as a % of Total (35% max):</td>
+						<td><span id="percentDTPIDFundsTotalDisplay">0</span><label>%</label></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- How you spent the money section -->
+		<div>
+			<h3>How You Plan to Spend the DTPID Funds:</h3>
+			<p>The "Total DTPID Funds" number and the "Maximum Eligible DTPID Amount" must be equal</p>
+			<table class="table table-bordered form-group form-inline">
+				<thead>
+					<th colspan="2">DTPID Funding Categories</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Event Marketing:</td>
+						<td>
+							<label class="inLine">$</label>
+							<!-- Hotel Pre Dollar Advertising Marketing: -->
+							<input  id="00N0b0000088woe" class="inLine form-control" name="00N0b0000088woe" size="20" type="text" value="0" />
+						</td>
+					</tr>
+					<tr>
+						<td>Event Staffing:</td>
+						<td>
+							<label class="inLine">$</label>
+							<!-- Hotel Pre Dollar Web Staffing: -->
+							<input  id="00N0b0000089S0U" class="inLine form-control" name="00N0b0000089S0U" size="20" type="text" value="0" />
+						</td>
+					</tr>
+					<tr>
+						<td>Event Production</td>
+						<td>
+							<label class="inLine">$</label>
+							<!-- Hotel Pre Dollar Research Production: -->
+							<input  id="00N0b0000089SFW" class="inLine form-control" name="00N0b0000089SFW" size="20" type="text" value="0" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p class="inLine">Other:</p>
+							<!-- Hotel Pre Other Budget Explanation: -->
+							<input  id="00N0b0000082pNE" class="form-control" maxlength="40" name="00N0b0000082pNE" size="20" type="text" />
+						</td>
+						<td>
+							<label class="inLine">$</label>
+							<!-- Hotel Pre Dollar Other: -->
+							<input  id="00N0b00000BgxJU" class="form-control" name="00N0b00000BgxJU" size="20" type="text" value="0" />
+						</td>
+					</tr>
+					<tr class="biggerFont">
+						<td><strong>Total DTPID Funds</strong></td>
+						<td class="fixWidth">
+							<strong><label>$</label><span id="summedDTPIDFundsDisplay">0</span></strong>
+							<p id="matchDTPIDFunds1">Match with Maximum Eligible DTPID Amount: $<span id="matchDTPIDFunds2">0</span></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- Signature Section -->
+		<div class="form-group form-inline">
+			<p>Applicant, when submitting this Event Application Package, acknowledges the information contained herein as accurate and agrees to review of all related event materials and final support documentation prior to DTPID payment.</p>
+		</div>
+
+		<!-- Paragraph answer section -->
+		<div class="form-group">
+			<label>Brief Event Description:</label>
+			<textarea  id="00N0b0000082K90" class="form-control" name="00N0b0000082K90" rows="25" type="text" wrap="soft" required></textarea>
+
+			<p class="middle">Please add additional information to "tell the story"</p>
+
+			<label>Describe how DTPID funds will be used to increase attendance:</label>
+			<textarea  id="00N0b0000082KFy" class="form-control" name="00N0b0000082KFy" rows="25" type="text" wrap="soft" required></textarea>
+
+			<p class="middle">Event Application Program</p>
+			<p class="middle"><a href="http://www.DTPID.com" target="_blank">www.DTPID.com</a></p>
+		</div>
+
+		<p class="disclaimer"><strong>If you have any questions, please contact Maribeth Lysen at (214) 571-1028 or <a href="mailto:maribeth@visitdallas.com">Maribeth@visitdallas.com</a></strong></p>
+
+		<p class="disclaimer"><strong>Print this screen for your records before submitting. (Control+P or Command+P)</strong></p>
+
+		<input type="submit" class="btn btn-primary btn-lg btn-block" id="submit" name="submit" disabled>
+
+	</form>
+
+</div>
+
+<script type="text/javascript" src="preEventFormFinal.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

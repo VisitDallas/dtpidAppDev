@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DTPID Pre-Event Hotel Application Form</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="preHotelFormFinal.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://www.dtpid.com/">Dallas Tourism Public Improvement District</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://www.dtpid.com/">Overview</a></li>
+            <li><a href="http://www.dtpid.com/authorization">Authorization</a></li>
+            <li><a href="http://www.dtpid.com/hotels">Hotels</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Application <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://www.dtpid.com/application/hotels">Hotels</a></li>
+            <li><a href="http://www.dtpid.com/application/events">Events</a></li>
+          </ul>
+        </li>
+      </ul>
+    
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contacts <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://www.dtpid.com/contacts/administration">Administration</a></li>
+            <li><a href="http://www.dtpid.com/contacts/board-of-directors">Board of Directors</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+
+<!-- <input type=hidden name='captcha_settings' value='{"keyname":"preHotel","fallback":"true","orgId":"00D0b000000RDhe","ts":""}'> -->
+<input type=hidden name="oid" value="00D0b000000RDhe">
+<input type=hidden name="retURL" value="http://www.dtpid.com/thank-you-for-submitting-your-request">
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+<!--  these lines if you wish to test in debug mode.                          -->
+<!--  <input type="hidden" name="debug" value=1>                              -->
+<!--  <input type="hidden" name="debugEmail"                                  -->
+<!--  value="naskam@visitdallas.com">                                         -->
+<!--  ----------------------------------------------------------------------  -->
+
+<div class="container">
+	
+	<!-- Header -->
+	<div>
+		<h3>DTPID Pre-Event Hotel Application and Budget Form</h3>
+		<h5><em>Submitted 60 days prior to Event Start</em></h5>
+	</div>
+	
+	<div class="form-horizontal">
+	<!-- Hotel Information -->
+	<h3>Hotel Information:</h3>
+
+	<div class="form-group">
+		<label for="company" class="col-sm-2 control-label">
+			Hotel Name
+		</label>
+		<div class="col-sm-9">
+			<input id="company" class="form-control" name="company" size="80" type="text" required/>
+		</div>
+	</div>
+
+	<div class="hide">
+		<label>Application_Type:</label>
+		<select  id="00N0b000007wAxU" name="00N0b000007wAxU" title="Application_Type">
+		<option value="Hotel_Pre-Event">Hotel Pre-Event</option>
+		</select>
+	</div>
+
+	<!-- Contact Information -->
+	<div class="form-group">
+		<label for="first_name" class="col-sm-2 control-label">
+			First Name:
+		</label>
+		<div class="col-sm-9">
+			<input  id="first_name" class="form-control" name="first_name" size="20" type="text" required/>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="last_name" class="col-sm-2 control-label">
+			Last Name:
+		</label>
+		<div class="col-sm-9">
+			<input  id="last_name" class="form-control" maxlength="80" name="last_name" size="20" type="text" required/>
+		</div>
+	</div>
+		
+
+	<div class="form-group">
+		<label for="mobile" class="col-sm-2 control-label">
+			Contact Phone:
+		</label>
+		<div class="col-sm-9">
+			<input class="form-control" id="mobile" name="mobile" size="20" type="text" required/>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="email" class="col-sm-2 control-label">
+			Contact Email:
+		</label>
+		<div class="col-sm-9">
+			<input class="form-control" id="email" name="email" size="20" type="text" required/>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">
+			GM Full Name:
+		</label>
+		<div class="col-sm-9">
+			<input id="00N0b0000088ppS" class="form-control" name="00N0b0000088ppS" size="20" type="text" required/>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">
+			GM Email:
+		</label>
+		<div class="col-sm-9 control-label">
+			<input  id="00N0b00000BgxXl" class="form-control" name="00N0b00000BgxXl" size="20" type="text" required/>
+		</div>
+	</div>
+
+	<!-- Event Information -->
+	<h3>Event Information:</h3>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">
+			Event Name:
+		</label>
+		<div class="col-sm-9">
+			<input id="00N0b000007uwKK" class="form-control" name="00N0b000007uwKK" size="40" type="text" required/>
+		</div>
+	</div>
+
+	<div class="form-group form-inline hide">
+		<!-- <label>Event Start Date:</label>
+		<span class="dateInput dateOnlyInput">
+		<input id="00N0b000007v1mP" class="form-control" name="00N0b000007v1mP" size="12" type="text" placeholder="mm/dd/yyyy" required/></span> -->
+
+		<!-- <label>Event End Date:</label>
+		<span class="dateInput dateOnlyInput">
+		<input id="00N0b000007v1qc" class="form-control" name="00N0b000007v1qc" size="12" type="text" placeholder="mm/dd/yyyy" required/></span> -->
+
+		<!-- <label>Event Decision Date:</label>
+		<span class="dateInput dateOnlyInput"><input  id="00N0b00000Bf6oE" class="form-control" name="00N0b00000Bf6oE" size="12" type="text" placeholder="mm/dd/yyyy" required/></span>
+
+		<label>If Yes, Last Event Date:</label>
+		<span class="dateInput dateOnlyInput"><input id="00N0b0000082rE7" class="form-control" name="00N0b0000082rE7" size="12" type="text" placeholder="mm/dd/yyyy"/></span> -->
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">
+			Event Start Date:
+		</label>
+		<div class="col-sm-9">
+			<input type="text" name="00N0b000007v1mP" id="00N0b000007v1mP" class="form-control" placeholder="mm/dd/yyyy">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">
+			Event End Date:
+		</label>
+		<div class="col-sm-9">
+			<input type="text" name="00N0b000007v1qc" id="00N0b000007v1qc" class="form-control" placeholder="mm/dd/yyyy">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">
+			% of Inventory at Peak:
+		</label>
+		<div class="col-sm-9">
+			<input id="00N0b000009gTge" class="form-control" name="00N0b000009gTge" size="20" type="text" placeholder="0" required/>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">
+			Event Decision Date:
+		</label>
+		<div class="col-sm-9">
+			<input type="text" name="00N0b00000Bf6oE" id="00N0b00000Bf6oE" class="form-control" placeholder="mm/dd/yyyy">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">
+			Previously in Dallas: (check if yes):
+		</label>
+		<div class="col-sm-3">
+			<input id="00N0b0000082r6W" class="form-control" name="00N0b0000082r6W" type="checkbox" value="1" />
+		</div>
+
+		<label id="labelIfYes" class="hide col-sm-2 control-label">
+			Last Event Date:
+		</label>
+		<div class="col-sm-4">
+			<input type="text" name="00N0b0000082rE7" id="00N0b0000082rE7" class="form-control hide" placeholder="mm/dd/yyyy">
+		</div>
+	</div>
+</div>
+
+	<div>
+		<h4>Available Funding and Return on Investment: <!-- <em>(attach contracted/requested room flow)</em> --></h4>
+
+		<ul>
+			<li>Your anticipated number of <strong>Hotel Room Nights</strong> as determined by contracted room block</li>
+			<li>Multiplied by <strong>Contracted Hotel Rate</strong> to get <strong>Total Revenue</strong></li>
+			<li>Divide <strong>Total Revenue</strong> by 10 to get the 10:1 required ROI = <strong>Maximum Eligible DTPID Amount</strong></li>
+		</ul>
+	</div>
+
+	<div class="form-group form-inline inLine">
+ 	 	<p class="inLine"><strong>Hotel Room Nights</strong>
+			<input  id="00N0b000009got7" class="form-control inLine" name="00N0b000009got7" size="7" type="text" placeholder="0" required/>
+	 		<strong>Avg. Room Rate </strong>$
+			<input  id="00N0b000009gotC" class="form-control inLine" name="00N0b000009gotC" size="4" type="text" placeholder="0" required/>	
+		= <strong>Total Revenue $<span id="totalRevenueDisplay">0</span> / 10 (for ROI)</strong> =</p>
+	</div>
+	<div class="center">
+	 	<h4>
+	 	$<span id="finalDTPIDAmountDisplay">0</span><strong> Maximum Eligible DTPID Amount</strong>
+	 	</h4>			
+ 	</div>
+
+	<div class="form-group form-inline">
+		<label>DTPID Funds Requested For Pre-Approval: $</label>
+		<input id="00N0b00000BQW8Z" class="form-control" name="00N0b00000BQW8Z" size="20" type="text" placeholder="0" required/>
+
+		<p>This cannot be higher than the Maximum Eligible Amount</p>
+	</div>
+
+	<div class="form-group">
+		<label>Brief Event Description: <em>(include competing cities)</em></label>
+		<textarea  id="00N0b0000082K90" class="form-control" name="00N0b0000082K90" rows="5" type="text" wrap="soft" required></textarea><br>
+
+		<label>Brief Description of DTPID Funding:</label>
+		<textarea  id="00N0b000009fiCp" class="form-control" name="00N0b000009fiCp" rows="5" type="text" wrap="soft" required></textarea><br>
+
+	</div>
+
+	<p>When submitting this Individual Hotel Incentive Application, signatories acknowledge the information contained herein as accurate and agree to review of all related event materials and final support documentation prior to DTPID payment.</p>
+
+	<p class="disclaimer"><strong>If you have any questions, please contact Sheryl Budelier at (214) 571-1337 or <a href="mailto:sheryl@visitdallas.com">Sheryl@visitdallas.com</a></strong></p>
+
+	<p class="disclaimer"><strong>Print this screen for your records before submitting. (Control+P or Command+P)</strong></p>
+	
+	<input class="btn btn-primary btn-lg btn-block" type="submit" name="submit">
+</div>
+</form>
+
+<script type="text/javascript" src="preHotelFormFinal.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>

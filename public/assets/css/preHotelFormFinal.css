@@ -1,0 +1,201 @@
+body {
+	background-color: #0E4D92;
+}
+
+.container {
+	background-color: white;
+	padding: 20px;
+	margin: 0px auto;
+	border: 6px solid rgb(4, 34, 70);
+	font-family: open-sans,Helvetica,Arial,Arial Unicode,Lucida Sans Unicode,sans-serif;
+}
+
+.navbar {
+	background: #082037;
+	border: 0px;
+}
+
+.navbar .navbar-nav>li>a {
+	color: white;
+}
+
+.navbar .navbar-brand {
+	color: white;
+}
+
+.hide {
+	display: none;
+}
+
+.form-inline .form-control {
+	margin-right: 5px;
+}
+
+.center {
+	text-align: center;
+	align: center;
+}
+
+.disclaimer {
+	font-size: 1.3em;
+}
+
+
+/* datepicker css */
+
+.ui-datepicker {
+background: #000000; /* Old browsers */
+background: #000000 -moz-linear-gradient(top, #fcfcfc 0%, #fff 100%); /* FF3.6+ */
+background: #000000 -webkit-gradient(linear, left top, left bottom, color- 
+stop(0%,#000000)), color-stop(100%,#34495e); /* Chrome,Safari4+ */
+background: #000000 -webkit-linear-gradient(top,#000000 0%, #34495e 100%); /* 
+Chrome10+,Safari5.1+ */
+background: #000000 -o-linear-gradient(top,#000000 0%, #34495e 100%); /* Opera11.10+ 
+*/
+background: #000000 -ms-linear-gradient(top,#000000 0%, #34495e 100%); /* IE10+ */
+background: #000000 linear-gradient(top,#000000 0%, #34495e 100%); /* W3C */
+font-size:11px;
+width: 300px;
+}
+
+.ui-datepicker table {
+        width: 100%;
+    }
+
+.ui-datepicker-header {
+    background: #0E4D92;
+    color: #ffffff;
+    font-family: open-sans,Helvetica,Arial,Arial Unicode,Lucida Sans Unicode,sans-serif;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #0E4D92;
+}
+
+.ui-datepicker-title {
+    text-align: center;
+    font-size: 15px;
+
+}
+
+.ui-datepicker-prev {
+    float: left;
+    cursor: pointer;
+    background-position: center -30px;
+    color: white;
+    padding-left: 5px;
+    font-size: 15px;
+}
+
+.ui-datepicker-next {
+    float: right;
+    cursor: pointer;
+    background-position: center 0px;
+    color: white;
+    padding-right: 5px;
+    font-size: 15px;
+}
+
+.ui-datepicker thead {
+    background-color: #f7f7f7;
+
+    /*border-bottom: 1px solid #bbb;*/
+}
+
+.ui-datepicker th {
+    background-color:#808080;
+    text-transform: uppercase;
+    font-size: 8pt;
+    color: white;
+    text-align: center;
+    /*text-shadow: 1px 0px 0px #fff;*/
+    /*filter: dropshadow(color=#fff, offx=1, offy=0);*/
+}
+
+.ui-datepicker tbody td {
+    padding: 0;
+    /*border-right: 1px solid #808080;*/
+}
+
+    .ui-datepicker tbody td:last-child {
+        border-right: 0px;
+    }
+
+.ui-datepicker tbody tr {
+    border-bottom: 1px solid #0E4D92;
+}
+
+    .ui-datepicker tbody tr:last-child {
+        border-bottom: 0px;
+    }
+
+.ui-datepicker a {
+    text-decoration: none;
+}
+
+.ui-datepicker td span, .ui-datepicker td a {
+    display: inline-block;
+    /*font-weight: bold;*/
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: #ffffff;
+    /*text-shadow: 1px 1px 0px #fff;*/
+    /*filter: dropshadow(color=#fff, offx=1, offy=1);*/
+}
+
+.ui-datepicker-calendar .ui-state-default {
+      background: linear-gradient(#999999, #737373);
+      color:#ffffff;
+      height:40px;
+      width:40px;
+
+}
+
+.ui-datepicker-calendar .ui-state-hover {
+    background: #33adff;
+    color: #FFFFFF;
+}
+
+.ui-datepicker-calendar .ui-state-active {
+    background: #0E4D92;
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    color: #e0e0e0;
+    text-shadow: 0px 1px 0px #4d7a85;
+    border: 1px solid #55838f;
+    position: relative;
+    margin: -1px;
+}
+
+.ui-datepicker-unselectable .ui-state-default {
+    background: #000000;
+    color: #000;
+}
+
+.ui-state-disabled {
+	background: #0E4D92;
+}
+
+.ui-autocomplete {
+	background: #0E4D92;
+	border: 1px solid black;
+	width: 20px;
+	list-style: none;
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.ui-menu .ui-menu-item:hover {
+	background: #082037;
+}
+
+.ui-menu .ui-menu-item{
+	height: auto;
+	width: auto;
+	font-size: 15px;
+	color: white;
+}
+
