@@ -1,0 +1,23 @@
+{
+  "name": "dtpidapp",
+  "version": "1.0.0",
+  "description": "dtpid forms and app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1\"",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "heroku",
+    "dtpid"
+  ],
+  "author": "Nick Askam",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  },
+  "engine": {
+    "node": "12.1.0"
+  }
+}
