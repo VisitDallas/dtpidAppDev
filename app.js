@@ -1,23 +1,23 @@
 var express = require("express");
 var app = express();
 
-app.use(express.static("views"));
+app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 app.get("/prehotelform", function(req, res){
-   res.render("preHotelForm");
+   res.render("preHotelForm.ejs");
 });
 
 app.get("/posthotelform", function(req, res) {
-    res.render("postHotelForm");
+    res.render("postHotelForm.ejs");
 });
 
 app.get("/preeventform", function(req, res) {
-    res.render("preEventForm");
+    res.render("preEventForm.ejs");
 });
 
 app.get("/posteventform", function(req, res) {
-    res.render("postEventForm");
+    res.render("postEventForm.ejs");
 });
 
 app.get("*", function(req, res){
