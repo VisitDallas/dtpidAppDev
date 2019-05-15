@@ -20,10 +20,6 @@ app.get("/posteventform", function(req, res) {
     res.render("postEventForm");
 });
 
-app.get("/tableautest", function(req, res) {
-    res.render("tableauTest");
-})
-
 app.get("*", function(req, res){
     res.render("home");
 });
