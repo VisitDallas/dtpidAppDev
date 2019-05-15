@@ -5,19 +5,19 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 app.get("/prehotelform", function(req, res){
-   res.render("preHotelForm.ejs");
+   res.render("preHotelFormFinal");
 });
 
 app.get("/posthotelform", function(req, res) {
-    res.render("postHotelForm.ejs");
+    res.render("postHotelFormFinal");
 });
 
 app.get("/preeventform", function(req, res) {
-    res.render("preEventForm.ejs");
+    res.render("preEventFormFinal");
 });
 
 app.get("/posteventform", function(req, res) {
-    res.render("postEventForm.ejs");
+    res.render("postEventFormFinal");
 });
 
 app.get("*", function(req, res){
