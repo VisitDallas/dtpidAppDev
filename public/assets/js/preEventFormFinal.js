@@ -214,7 +214,7 @@ $(".phone").change(function(){
 		var mobileDisplay = document.getElementById("mobile");
 		mobileDisplay.value = formatPhoneNumber(this.value);
 	}
-})
+});
 
 function clearEstimationChoice(){
 	estimationChoice0.classList.remove("hide");
