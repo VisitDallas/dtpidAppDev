@@ -53,19 +53,22 @@ var requestedAmount = 0;
 //estimation choice event listener
 estimationSelection.addEventListener("change", function(){
 	//perform the selection actions first
-	estimationSelectionActions();
+	
 	//change which classes to hide and factor based on selection
 	if (estimationSelection.selectedIndex == 1){
 		document.getElementById("estimationChoice1").classList.remove("hide");
 		estimationChoiceFactor = 0.09;
+		estimationSelectionActions();
 	} else if (estimationSelection.selectedIndex == 2){
 		document.getElementById("estimationChoice2").classList.remove("hide");
 		estimationChoiceFactor = 1.0;
+		estimationSelectionActions();
 		//this option allows you to change room rate
 		hotelRoomRateDisplay.removeAttribute('readonly');
 	} else if (estimationSelection.selectedIndex == 3){
 		document.getElementById("estimationChoice3").classList.remove("hide");
 		estimationChoiceFactor = 0.6;
+		estimationSelectionActions();
 	} else {
 		clearEstimationChoice();
 	}
