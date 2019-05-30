@@ -26,7 +26,7 @@ var lessAnyPayments = 0;
 var finalPaymentDueDisplay = document.getElementById("00N0b00000ABjFv");
 var finalPaymentDue = 0;
 var totalDTPIDFundsDisplay = document.getElementById("totalDTPIDFundsDisplay");
-var totalEventBudgetDisplay = document.getElementById("00N0b00000APyfT");
+var totalEventBudgetDisplay = document.getElementById("00N0b00000CbolR");
 var totalEventBudget = 0;
 var percentDTPIDTotalDisplay = document.getElementById("percentDTPIDTotalDisplay");
 var percentDTPIDTotal = 0;
@@ -181,17 +181,27 @@ requestedAmountDisplay.addEventListener("change", function(){
 	showSubmit();
 })
 
-mobileDisplay.addEventListener("change", function(){
-	mobileValue = mobile.value;
-	mobileValue = formatPhoneNumber(mobileValue);
-	mobileDisplay.value = mobileValue;
-})
+// mobileDisplay.addEventListener("change", function(){
+// 	mobileValue = mobile.value;
+// 	mobileValue = formatPhoneNumber(mobileValue);
+// 	mobileDisplay.value = mobileValue;
+// })
 
-phoneDisplay.addEventListener("change", function(){
-	phoneValue = phone.value;
-	phoneValue = formatPhoneNumber(phoneValue);
-	phoneDisplay.value = phoneValue;
-})
+// phoneDisplay.addEventListener("change", function(){
+// 	phoneValue = phone.value;
+// 	phoneValue = formatPhoneNumber(phoneValue);
+// 	phoneDisplay.value = phoneValue;
+// })
+
+$(".phone").change(function(){
+	if(this.id == "phone"){
+		var phoneDisplay = document.getElementById("phone");
+		phoneDisplay.value = formatPhoneNumber(this.value);
+	} else if (this.id == "mobile"){
+		var mobileDisplay = document.getElementById("mobile");
+		mobileDisplay.value = formatPhoneNumber(this.value);
+	}
+});
 
 function addDTPIDFundingCategories(){
 	summedDTPIDFunds = eventMarketingTotal + eventStaffingTotal + eventProductionTotal + eventOtherTotal;
