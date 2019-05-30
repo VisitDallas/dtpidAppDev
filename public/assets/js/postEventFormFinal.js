@@ -276,26 +276,22 @@ function checkRequestedOverMax(){
 	}
 }
 
+//change requested amount, funds available and totals at once
 function setFundsDisplayNumbers(num){
 	requestedAmountDisplay.value = numberWithCommas(requestedAmount);
-	dtpidFundsAvailableDisplay.value = numberWithCommas(num);
+	dtpidFundsAvailableDisplay.textContent = numberWithCommas(num);
 	totalDTPIDFundsDisplay.textContent = numberWithCommas(num);
 	matchDTPIDFunds2.textContent = numberWithCommas(num);
 }
 
+//see if requestested is more than pre approved
 function checkPreApprovedOverRequested(){
 	if (dtpidFundsPreApproved >= requestedAmount){
 		dtpidFundsPreApproved = requestedAmount;
 		setFundsDisplayNumbers(dtpidFundsPreApproved);
-		// dtpidFundsAvailableDisplay.textContent = numberWithCommas(dtpidFundsPreApproved);
-		// totalDTPIDFundsDisplay.textContent = numberWithCommas(dtpidFundsPreApproved);
-		// matchDTPIDFunds2.textContent = numberWithCommas(dtpidFundsPreApproved);
-	} else {
-		setFundsDisplayNumbers(dtpidFundsPreApproved);
-		// dtpidFundsAvailableDisplay.textContent = numberWithCommas(dtpidFundsPreApproved);
-		// totalDTPIDFundsDisplay.textContent = numberWithCommas(dtpidFundsPreApproved);
-		// matchDTPIDFunds2.textContent = numberWithCommas(dtpidFundsPreApproved);
-	}
+	} //else {
+	// 	setFundsDisplayNumbers(dtpidFundsPreApproved);
+	// }
 }
 
 function matchTotals(){
