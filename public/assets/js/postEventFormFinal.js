@@ -118,8 +118,11 @@ eventMarketingTotalDisplay.addEventListener("change", function(){
 });
 
 function parseNumber(var1, var2){
+	console.log("running parse number function")
 	var1.value = parseFloat(var1.value.replace(/,/g, ''));
+	console.log(var1);
 	var2 = Number(var1.value);
+	console.log(var2);
 }
 
 eventStaffingTotalDisplay.addEventListener("change", function(){
