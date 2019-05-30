@@ -88,6 +88,7 @@ estimationNumberInputDisplay.addEventListener("change", function(){
 	matchTotals();
 	showSubmit();
 	doTotalBudgetCalculations();
+	doLessPaymentsCalculations();
 	overPercentage();
 	estimationNumberInputDisplay.value = numberWithCommas(estimationNumberInput);
 });
@@ -229,7 +230,7 @@ function doEstimationCalculations(){
 function doLessPaymentsCalculations(){
 	lessAnyPaymentsDisplay.value = parseFloat(lessAnyPaymentsDisplay.value.replace(/,/g, ''));
 	lessAnyPayments = Number(lessAnyPaymentsDisplay.value);
-	finalPaymentDue = finalDTPIDAmount - lessAnyPayments;
+	finalPaymentDue = requestedAmount - lessAnyPayments;
 	lessAnyPaymentsDisplay.value = numberWithCommas(lessAnyPayments);
 	finalPaymentDueDisplay.value = numberWithCommas(finalPaymentDue);
 }
