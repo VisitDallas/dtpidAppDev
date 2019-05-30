@@ -111,6 +111,8 @@ eventMarketingTotalDisplay.addEventListener("change", function(){
 	// eventMarketingTotalDisplay.value = parseFloat(eventMarketingTotalDisplay.value.replace(/,/g, ''));
 	// eventMarketingTotal = Number(eventMarketingTotalDisplay.value);
 	parseNumber(eventMarketingTotalDisplay, eventMarketingTotal);
+	console.log(eventMarketingTotal);
+	console.log("this is the the event marketing total display" + eventMarketingTotalDisplay);
 	addDTPIDFundingCategories();
 	eventMarketingTotalDisplay.value = numberWithCommas(eventMarketingTotal);
 	matchTotals();
@@ -120,7 +122,7 @@ eventMarketingTotalDisplay.addEventListener("change", function(){
 function parseNumber(var1, var2){
 	console.log("running parse number function")
 	var1.value = parseFloat(var1.value.replace(/,/g, ''));
-	console.log(var1);
+	console.log(var1.value);
 	var2 = Number(var1.value);
 	console.log(var2);
 }
