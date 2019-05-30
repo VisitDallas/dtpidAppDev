@@ -111,16 +111,17 @@ eventMarketingTotalDisplay.addEventListener("change", function(){
 	// eventMarketingTotalDisplay.value = parseFloat(eventMarketingTotalDisplay.value.replace(/,/g, ''));
 	// eventMarketingTotal = Number(eventMarketingTotalDisplay.value);
 	eventMarketingTotal = parseNumber(eventMarketingTotalDisplay);
-	console.log(eventMarketingTotal);
-	console.log("this is the the event marketing total display" + eventMarketingTotalDisplay.value);
+	console.log(summedDTPIDFunds);
 	addDTPIDFundingCategories();
 	eventMarketingTotalDisplay.value = numberWithCommas(eventMarketingTotal);
+	console.log(summedDTPIDFunds);
 	matchTotals();
 	showSubmit();
 });
 
 function parseNumber(var1){
 	var1.value = parseFloat(var1.value.replace(/,/g, ''));
+	console.log(summedDTPIDFunds);
 	return var1.value;
 }
 
