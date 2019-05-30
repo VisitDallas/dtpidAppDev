@@ -1,4 +1,4 @@
-// var estimationSelection = document.getElementById("00N0b000009gtNd");
+var estimationSelection = document.getElementById("00N0b000009gtNd");
 var estimationChoice0 = document.getElementById("estimationChoice0");
 // var estimationChoice1 = document.getElementById("estimationChoice1");
 // var estimationChoice2 = document.getElementById("estimationChoice2");
@@ -51,7 +51,7 @@ var requestedAmountDisplay = document.getElementById("00N0b00000BQW8e");
 var requestedAmount = 0;
 
 //estimation choice event listener
-document.getElementById("00N0b000009gtNd").addEventListener("change", function(){
+estimationSelection.addEventListener("change", function(){
 	//perform the selection actions first
 	estimationSelectionActions();
 	//change which classes to hide and factor based on selection
@@ -108,20 +108,16 @@ totalEventBudgetDisplay.addEventListener("change", function(){
 });
 
 eventMarketingTotalDisplay.addEventListener("change", function(){
-	// eventMarketingTotalDisplay.value = parseFloat(eventMarketingTotalDisplay.value.replace(/,/g, ''));
-	// eventMarketingTotal = Number(eventMarketingTotalDisplay.value);
 	eventMarketingTotal = Number(parseNumber(eventMarketingTotalDisplay));
-	console.log(summedDTPIDFunds);
 	addDTPIDFundingCategories();
 	eventMarketingTotalDisplay.value = numberWithCommas(eventMarketingTotal);
-	console.log(summedDTPIDFunds);
 	matchTotals();
 	showSubmit();
 });
 
+//taking out comments from variable
 function parseNumber(var1){
 	var1.value = parseFloat(var1.value.replace(/,/g, ''));
-	console.log(summedDTPIDFunds);
 	return var1.value;
 }
 
