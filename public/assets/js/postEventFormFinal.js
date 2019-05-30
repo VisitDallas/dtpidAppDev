@@ -160,12 +160,12 @@ eventOtherTotalDisplay.addEventListener("change", function(){
 
 eventOrganizationDisplay.addEventListener("change", function(){
 	eventOrganization = eventOrganizationDisplay.value;
-	console.log(eventOrganization);
+	// console.log(eventOrganization);
 })
 
 eventNameDisplay.addEventListener("change", function(){
 	eventName = eventNameDisplay.value;
-	console.log(eventName);
+	// console.log(eventName);
 })
 
 requestedAmountDisplay.addEventListener("change", function(){
@@ -173,6 +173,7 @@ requestedAmountDisplay.addEventListener("change", function(){
 	requestedAmount = Number(requestedAmountDisplay.value);
 	checkRequestedOverMax();
 	checkPreApprovedOverRequested();
+	doLessPaymentsCalculations();
 	// requestedAmountDisplay.value = numberWithCommas(requestedAmount);
 	doTotalBudgetCalculations();
 	addDTPIDFundingCategories();
