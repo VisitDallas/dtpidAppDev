@@ -1,8 +1,8 @@
-var estimationSelection = document.getElementById("00N0b000009gtNd");
+// var estimationSelection = document.getElementById("00N0b000009gtNd");
 var estimationChoice0 = document.getElementById("estimationChoice0");
-var estimationChoice1 = document.getElementById("estimationChoice1");
-var estimationChoice2 = document.getElementById("estimationChoice2");
-var estimationChoice3 = document.getElementById("estimationChoice3");
+// var estimationChoice1 = document.getElementById("estimationChoice1");
+// var estimationChoice2 = document.getElementById("estimationChoice2");
+// var estimationChoice3 = document.getElementById("estimationChoice3");
 var estimationResult = document.getElementById("estimationCalculation");
 var estimationChoiceFactorDisplay = document.getElementById("estimationChoiceFactorDisplay");
 var estimationChoiceFactor = 0;
@@ -50,20 +50,21 @@ var submitButton = document.getElementById("submit");
 var requestedAmountDisplay = document.getElementById("00N0b00000BQW8e");
 var requestedAmount = 0;
 
-estimationSelection.addEventListener("change", function(){
+//estimation choice event listener
+document.getElementById("00N0b000009gtNd").addEventListener("change", function(){
 	//perform the selection actions first
 	estimationSelectionActions();
 	//change which classes to hide and factor based on selection
 	if (estimationSelection.selectedIndex == 1){
-		estimationChoice1.classList.remove("hide");
+		document.getElementById("estimationChoice1").classList.remove("hide");
 		estimationChoiceFactor = 0.09;
 	} else if (estimationSelection.selectedIndex == 2){
-		estimationChoice2.classList.remove("hide");
+		document.getElementById("estimationChoice2").classList.remove("hide");
 		estimationChoiceFactor = 1.0;
 		//this option allows you to change room rate
 		hotelRoomRateDisplay.removeAttribute('readonly');
 	} else if (estimationSelection.selectedIndex == 3){
-		estimationChoice3.classList.remove("hide");
+		document.getElementById("estimationChoice3").classList.remove("hide");
 		estimationChoiceFactor = 0.6;
 	} else {
 		clearEstimationChoice();
@@ -107,13 +108,19 @@ totalEventBudgetDisplay.addEventListener("change", function(){
 });
 
 eventMarketingTotalDisplay.addEventListener("change", function(){
-	eventMarketingTotalDisplay.value = parseFloat(eventMarketingTotalDisplay.value.replace(/,/g, ''));
-	eventMarketingTotal = Number(eventMarketingTotalDisplay.value);
+	// eventMarketingTotalDisplay.value = parseFloat(eventMarketingTotalDisplay.value.replace(/,/g, ''));
+	// eventMarketingTotal = Number(eventMarketingTotalDisplay.value);
+	parseNumber(eventMarketingTotalDisplay, eventMarketingTotal);
 	addDTPIDFundingCategories();
 	eventMarketingTotalDisplay.value = numberWithCommas(eventMarketingTotal);
 	matchTotals();
 	showSubmit();
 });
+
+function parseNumber(var1, var2){
+	var1.value = parseFloat(var1.value.replace(/,/g, ''));
+	var2 = Number(var1.value);
+}
 
 eventStaffingTotalDisplay.addEventListener("change", function(){
 	eventStaffingTotalDisplay.value = parseFloat(eventStaffingTotalDisplay.value.replace(/,/g, ''));
@@ -172,6 +179,7 @@ requestedAmountDisplay.addEventListener("change", function(){
 	showSubmit();
 })
 
+//adding format to the phone and mobile fields
 $(".phone").change(function(){
 	if(this.id == "phone"){
 		var phoneDisplay = document.getElementById("phone");
@@ -204,10 +212,6 @@ function doEstimationCalculations(){
 	checkIfOverMax();
 	setRequestedAmount();
 	setPreApprovedAmount();
-	finalDTPIDAmountDisplay.textContent = numberWithCommas(finalDTPIDAmount);
-	totalDTPIDFundsDisplay.textContent = numberWithCommas(requestedAmount);
-	dtpidFundsAvailableDisplay.textContent = numberWithCommas(requestedAmount);
-	matchDTPIDFunds2.textContent = numberWithCommas(requestedAmount);
 }
 
 function doLessPaymentsCalculations(){
@@ -272,8 +276,8 @@ function checkIfOverMax(){
 function checkRequestedOverMax(){
 	if (requestedAmount >= finalDTPIDAmount){
 		requestedAmount = finalDTPIDAmount;
-		setFundsDisplayNumbers(requestedAmount);
 	}
+	setFundsDisplayNumbers(requestedAmount);
 }
 
 //change requested amount, funds available and totals at once
@@ -288,12 +292,11 @@ function setFundsDisplayNumbers(num){
 function checkPreApprovedOverRequested(){
 	if (dtpidFundsPreApproved >= requestedAmount){
 		dtpidFundsPreApproved = requestedAmount;
-		setFundsDisplayNumbers(dtpidFundsPreApproved);
-	} //else {
-	// 	setFundsDisplayNumbers(dtpidFundsPreApproved);
-	// }
+	}
+	 setFundsDisplayNumbers(dtpidFundsPreApproved);
 }
 
+//logic to show if totals wanted match requested
 function matchTotals(){
 	summedDTPIDFundsDisplay.textContent = numberWithCommas(summedDTPIDFunds);
 	if (requestedAmount != summedDTPIDFunds){
@@ -305,6 +308,7 @@ function matchTotals(){
 	}
 }
 
+//logic to show red if percentage is not correct
 function overPercentage(){
 	if (percentDTPIDTotal > 35){
 		percentDTPIDTotalDisplay.classList.add("showcaseRed");
@@ -313,13 +317,12 @@ function overPercentage(){
 	}
 }
 
+//logic to make submit button read only or not
 function showSubmit(){
 	if(requestedAmount == summedDTPIDFunds && percentDTPIDTotal <= 35 && hotelRoomNights > 30 && totalRevenue > 5000){
-		// submitButton.classList.remove("hide");
 		submitButton.removeAttribute("disabled");
 	}
 	else {
-		// submitButton.classList.add("hide");
 		submitButton.setAttribute("disabled","true");
 	}
 }
