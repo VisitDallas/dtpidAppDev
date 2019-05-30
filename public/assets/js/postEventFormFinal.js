@@ -42,12 +42,6 @@ var summedDTPIDFundsDisplay = document.getElementById("summedDTPIDFundsDisplay")
 var summedDTPIDFunds = 0;
 var matchDTPIDFunds1 = document.getElementById("matchPromptTotalDisplay1");
 var matchDTPIDFunds2 = document.getElementById("matchPromptTotalDisplay2");
-var mobileDisplay = document.getElementById("mobile");
-var mobileValue = " ";
-var phoneDisplay = document.getElementById("phone");
-var phoneValue = " ";
-// var eventStartDate1 = document.getElementById("00N0b000007v1mP");
-// var eventStartDate2 = document.getElementById("eventStartDateCopy");
 var eventOrganizationDisplay = document.getElementById("company");
 var eventOrganization = "";
 var eventNameDisplay = document.getElementById("00N0b000007uwKK");
@@ -75,12 +69,6 @@ estimationSelection.addEventListener("change", function(){
 		clearEstimationChoice();
 	}
 });
-
-function estimationSelectionActions(){
-	clearEstimationChoice();
-	showEstimationChoice();
-	showEstimationChoiceFactor();
-}
 
 estimationNumberInputDisplay.addEventListener("change", function(){
 	estimationNumberInputDisplay.value = parseFloat(estimationNumberInputDisplay.value.replace(/,/g, ''));
@@ -184,18 +172,6 @@ requestedAmountDisplay.addEventListener("change", function(){
 	showSubmit();
 })
 
-// mobileDisplay.addEventListener("change", function(){
-// 	mobileValue = mobile.value;
-// 	mobileValue = formatPhoneNumber(mobileValue);
-// 	mobileDisplay.value = mobileValue;
-// })
-
-// phoneDisplay.addEventListener("change", function(){
-// 	phoneValue = phone.value;
-// 	phoneValue = formatPhoneNumber(phoneValue);
-// 	phoneDisplay.value = phoneValue;
-// })
-
 $(".phone").change(function(){
 	if(this.id == "phone"){
 		var phoneDisplay = document.getElementById("phone");
@@ -205,6 +181,12 @@ $(".phone").change(function(){
 		mobileDisplay.value = formatPhoneNumber(this.value);
 	}
 });
+
+function estimationSelectionActions(){
+	clearEstimationChoice();
+	showEstimationChoice();
+	showEstimationChoiceFactor();
+}
 
 function addDTPIDFundingCategories(){
 	summedDTPIDFunds = eventMarketingTotal + eventStaffingTotal + eventProductionTotal + eventOtherTotal;
@@ -290,14 +272,22 @@ function checkRequestedOverMax(){
 	if (requestedAmount >= finalDTPIDAmount){
 		requestedAmount = finalDTPIDAmount;
 		requestedAmountDisplay.value = numberWithCommas(requestedAmount);
-		dtpidFundsAvailableDisplay.textContent = numberWithCommas(requestedAmount);
-		totalDTPIDFundsDisplay.textContent = numberWithCommas(requestedAmount);
-		matchDTPIDFunds2.textContent = numberWithCommas(requestedAmount);
-	} else {
-		dtpidFundsAvailableDisplay.textContent = numberWithCommas(requestedAmount);
-		totalDTPIDFundsDisplay.textContent = numberWithCommas(requestedAmount);
-		matchDTPIDFunds2.textContent = numberWithCommas(requestedAmount);
-	}
+		// dtpidFundsAvailableDisplay.textContent = numberWithCommas(requestedAmount);
+		// totalDTPIDFundsDisplay.textContent = numberWithCommas(requestedAmount);
+		// matchDTPIDFunds2.textContent = numberWithCommas(requestedAmount);
+		setFundsDisplayNumbers(requestedAmount);
+	} //else {
+		// dtpidFundsAvailableDisplay.textContent = numberWithCommas(requestedAmount);
+		// totalDTPIDFundsDisplay.textContent = numberWithCommas(requestedAmount);
+		// matchDTPIDFunds2.textContent = numberWithCommas(requestedAmount);
+		//setFundsDisplayNumbers(requestedAmount);
+	//}
+}
+
+function setFundsDisplayNumbers(num){
+	dtpidFundsAvailableDisplay.value = numberWithCommas(num);
+	totalDTPIDFundsDisplay.textContent = numberWithCommas(num);
+	matchDTPIDFunds2.textContent = numberWithCommas(num);
 }
 
 function checkPreApprovedOverRequested(){
