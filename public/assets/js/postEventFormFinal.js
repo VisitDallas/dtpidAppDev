@@ -57,29 +57,30 @@ var requestedAmountDisplay = document.getElementById("00N0b00000BQW8e");
 var requestedAmount = 0;
 
 estimationSelection.addEventListener("change", function(){
+	//perform the selection actions first
+	estimationSelectionActions();
+	//change which classes to hide and factor based on selection
 	if (estimationSelection.selectedIndex == 1){
-		clearEstimationChoice();
 		estimationChoice1.classList.remove("hide");
 		estimationChoiceFactor = 0.09;
-		showEstimationChoice();
-		showEstimationChoiceFactor();
 	} else if (estimationSelection.selectedIndex == 2){
-		clearEstimationChoice();
 		estimationChoice2.classList.remove("hide");
 		estimationChoiceFactor = 1.0;
-		showEstimationChoice();
+		//this option allows you to change room rate
 		hotelRoomRateDisplay.removeAttribute('readonly');
-		showEstimationChoiceFactor();
 	} else if (estimationSelection.selectedIndex == 3){
-		clearEstimationChoice();
 		estimationChoice3.classList.remove("hide");
 		estimationChoiceFactor = 0.6;
-		showEstimationChoice();
-		showEstimationChoiceFactor();
 	} else {
 		clearEstimationChoice();
 	}
 });
+
+function estimationSelectionActions(){
+	clearEstimationChoice();
+	showEstimationChoice();
+	showEstimationChoiceFactor();
+}
 
 estimationNumberInputDisplay.addEventListener("change", function(){
 	estimationNumberInputDisplay.value = parseFloat(estimationNumberInputDisplay.value.replace(/,/g, ''));
