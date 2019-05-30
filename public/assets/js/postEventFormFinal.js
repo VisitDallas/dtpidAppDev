@@ -110,7 +110,7 @@ totalEventBudgetDisplay.addEventListener("change", function(){
 eventMarketingTotalDisplay.addEventListener("change", function(){
 	// eventMarketingTotalDisplay.value = parseFloat(eventMarketingTotalDisplay.value.replace(/,/g, ''));
 	// eventMarketingTotal = Number(eventMarketingTotalDisplay.value);
-	eventMarketingTotal.value = parseNumber(eventMarketingTotalDisplay);
+	eventMarketingTotal = Number(parseNumber(eventMarketingTotalDisplay));
 	console.log(summedDTPIDFunds);
 	addDTPIDFundingCategories();
 	eventMarketingTotalDisplay.value = numberWithCommas(eventMarketingTotal);
@@ -120,9 +120,9 @@ eventMarketingTotalDisplay.addEventListener("change", function(){
 });
 
 function parseNumber(var1){
-	var1 = parseFloat(var1.value.replace(/,/g, ''));
+	var1.value = parseFloat(var1.value.replace(/,/g, ''));
 	console.log(summedDTPIDFunds);
-	return var1;
+	return var1.value;
 }
 
 eventStaffingTotalDisplay.addEventListener("change", function(){
