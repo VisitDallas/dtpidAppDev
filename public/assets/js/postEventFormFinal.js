@@ -268,23 +268,16 @@ function checkIfOverMax(){
 	}
 }
 
+//seeing if the requested amount is exceeding the final amount
 function checkRequestedOverMax(){
 	if (requestedAmount >= finalDTPIDAmount){
 		requestedAmount = finalDTPIDAmount;
-		requestedAmountDisplay.value = numberWithCommas(requestedAmount);
-		// dtpidFundsAvailableDisplay.textContent = numberWithCommas(requestedAmount);
-		// totalDTPIDFundsDisplay.textContent = numberWithCommas(requestedAmount);
-		// matchDTPIDFunds2.textContent = numberWithCommas(requestedAmount);
 		setFundsDisplayNumbers(requestedAmount);
-	} //else {
-		// dtpidFundsAvailableDisplay.textContent = numberWithCommas(requestedAmount);
-		// totalDTPIDFundsDisplay.textContent = numberWithCommas(requestedAmount);
-		// matchDTPIDFunds2.textContent = numberWithCommas(requestedAmount);
-		//setFundsDisplayNumbers(requestedAmount);
-	//}
+	}
 }
 
 function setFundsDisplayNumbers(num){
+	requestedAmountDisplay.value = numberWithCommas(requestedAmount);
 	dtpidFundsAvailableDisplay.value = numberWithCommas(num);
 	totalDTPIDFundsDisplay.textContent = numberWithCommas(num);
 	matchDTPIDFunds2.textContent = numberWithCommas(num);
@@ -293,15 +286,15 @@ function setFundsDisplayNumbers(num){
 function checkPreApprovedOverRequested(){
 	if (dtpidFundsPreApproved >= requestedAmount){
 		dtpidFundsPreApproved = requestedAmount;
-		requestedAmountDisplay.value = numberWithCommas(dtpidFundsPreApproved);
-		dtpidFundsAvailableDisplay.textContent = numberWithCommas(dtpidFundsPreApproved);
-		totalDTPIDFundsDisplay.textContent = numberWithCommas(dtpidFundsPreApproved);
-		matchDTPIDFunds2.textContent = numberWithCommas(dtpidFundsPreApproved);
+		setFundsDisplayNumbers(dtpidFundsPreApproved);
+		// dtpidFundsAvailableDisplay.textContent = numberWithCommas(dtpidFundsPreApproved);
+		// totalDTPIDFundsDisplay.textContent = numberWithCommas(dtpidFundsPreApproved);
+		// matchDTPIDFunds2.textContent = numberWithCommas(dtpidFundsPreApproved);
 	} else {
-		requestedAmountDisplay.value = numberWithCommas(dtpidFundsPreApproved);
-		dtpidFundsAvailableDisplay.textContent = numberWithCommas(dtpidFundsPreApproved);
-		totalDTPIDFundsDisplay.textContent = numberWithCommas(dtpidFundsPreApproved);
-		matchDTPIDFunds2.textContent = numberWithCommas(dtpidFundsPreApproved);
+		setFundsDisplayNumbers(dtpidFundsPreApproved);
+		// dtpidFundsAvailableDisplay.textContent = numberWithCommas(dtpidFundsPreApproved);
+		// totalDTPIDFundsDisplay.textContent = numberWithCommas(dtpidFundsPreApproved);
+		// matchDTPIDFunds2.textContent = numberWithCommas(dtpidFundsPreApproved);
 	}
 }
 
