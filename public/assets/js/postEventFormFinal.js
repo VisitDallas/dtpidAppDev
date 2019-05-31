@@ -1,3 +1,4 @@
+//global variables
 var estimationSelection = document.getElementById("00N0b000009gtNd");
 var estimationChoice0 = document.getElementById("estimationChoice0");
 var estimationResult = document.getElementById("estimationCalculation");
@@ -27,13 +28,9 @@ var totalEventBudgetDisplay = document.getElementById("00N0b00000CbolR");
 var totalEventBudget = 0;
 var percentDTPIDTotalDisplay = document.getElementById("percentDTPIDTotalDisplay");
 var percentDTPIDTotal = 0;
-// var eventMarketingTotalDisplay = document.getElementById("00N0b00000APpKT");
 var eventMarketingTotal = 0;
-// var eventStaffingTotalDisplay = document.getElementById("00N0b00000APr5I");
 var eventStaffingTotal = 0;
-// var eventProductionTotalDisplay = document.getElementById("00N0b00000APrKd");
 var eventProductionTotal = 0;
-// var eventOtherTotalDisplay = document.getElementById("00N0b00000BgxJt");
 var eventOtherTotal = 0;
 var summedDTPIDFundsDisplay = document.getElementById("summedDTPIDFundsDisplay");
 var summedDTPIDFunds = 0;
@@ -43,10 +40,10 @@ var eventOrganizationDisplay = document.getElementById("company");
 var eventOrganization = "";
 var eventNameDisplay = document.getElementById("00N0b000007uwKK");
 var eventName = "";
-var submitButton = document.getElementById("submit");
 var requestedAmountDisplay = document.getElementById("00N0b00000BQW8e");
 var requestedAmount = 0;
 
+//event listeners
 //estimation choice event listener
 estimationSelection.addEventListener("change", function(){
 	//perform the selection actions first
@@ -70,42 +67,12 @@ estimationSelection.addEventListener("change", function(){
 	doEstimationCalculations();
 });
 
-//this function takes an int and inputs it for the estimation choice factor
-function showEstimationChoiceFactor(int){
-	estimationChoiceFactor = int;
-	estimationChoiceFactorDisplay.textContent = estimationChoiceFactor;
-}
-
-function doEstimationCalculations(){
-	estimationChoiceResult = Math.round(estimationNumberInput * estimationChoiceFactor * 1)/1;
-	estimationChoiceResultDisplay.textContent = numberWithCommas(estimationChoiceResult);
-	hotelRoomNights = Number(estimationChoiceResult);
-	hotelRoomNightsDisplay.value = numberWithCommas(estimationChoiceResult);
-	totalRevenue = Math.round(estimationChoiceResult * hotelRoomRate * 1e12) / 1e12;
-	totalRevenueDisplay.textContent = numberWithCommas(totalRevenue);
-	finalDTPIDAmount = Math.floor(totalRevenue / 10);
-	checkIfOverMax();
-	setRequestedAmount();
-	setPreApprovedAmount();
-	setFundsDisplayNumbers(requestedAmount);
-	fillInFinalDTPIDFields(finalDTPIDAmount);
-}
-
 estimationNumberInputDisplay.addEventListener("change", function(){
 	estimationNumberInput = Number(parseNumber(estimationNumberInputDisplay));
 	doEstimationCalculations();
 	dtpidFundsCalculations();
 	estimationNumberInputDisplay.value = numberWithCommas(estimationNumberInput);
 });
-
-function dtpidFundsCalculations(){
-	doLessPaymentsCalculations();
-	doTotalBudgetCalculations();
-	addDTPIDFundingCategories();
-	matchTotals();
-	overPercentage();
-	showSubmit();
-}
 
 hotelRoomRateDisplay.addEventListener("change", function(){
 	hotelRoomRate = Number(this.value);
@@ -161,6 +128,7 @@ requestedAmountDisplay.addEventListener("change", function(){
 	setFundsDisplayNumbers(requestedAmount);
 })
 
+//functions
 //seeing if the requested value is higher than inserted int
 function checkRequestedOverVar(int){
 	if (requestedAmount >= int){
@@ -173,6 +141,27 @@ function checkPreApprovedOverRequested(){
 	if (dtpidFundsPreApproved >= requestedAmount){
 		dtpidFundsPreApproved = requestedAmount;
 	}
+}
+
+//this function takes an int and inputs it for the estimation choice factor
+function showEstimationChoiceFactor(int){
+	estimationChoiceFactor = int;
+	estimationChoiceFactorDisplay.textContent = estimationChoiceFactor;
+}
+
+function doEstimationCalculations(){
+	estimationChoiceResult = Math.round(estimationNumberInput * estimationChoiceFactor * 1)/1;
+	estimationChoiceResultDisplay.textContent = numberWithCommas(estimationChoiceResult);
+	hotelRoomNights = Number(estimationChoiceResult);
+	hotelRoomNightsDisplay.value = numberWithCommas(estimationChoiceResult);
+	totalRevenue = Math.round(estimationChoiceResult * hotelRoomRate * 1e12) / 1e12;
+	totalRevenueDisplay.textContent = numberWithCommas(totalRevenue);
+	finalDTPIDAmount = Math.floor(totalRevenue / 10);
+	checkIfOverMax();
+	setRequestedAmount();
+	setPreApprovedAmount();
+	setFundsDisplayNumbers(requestedAmount);
+	fillInFinalDTPIDFields(finalDTPIDAmount);
 }
 
 function doLessPaymentsCalculations(){
@@ -250,10 +239,10 @@ function overPercentage(){
 //logic to make submit button read only or not
 function showSubmit(){
 	if(requestedAmount == summedDTPIDFunds && percentDTPIDTotal <= 35 && hotelRoomNights > 30 && totalRevenue > 5000){
-		submitButton.removeAttribute("disabled");
+		document.getElementById("submit").removeAttribute("disabled");
 	}
 	else {
-		submitButton.setAttribute("disabled","true");
+		document.getElementById("submit")
 	}
 }
 
@@ -342,18 +331,21 @@ function resetAllFinalDTPIDAmounts(){
 	totalDTPIDFundsDisplay.textContent = numberWithCommas(requestedAmount);
 }
   
+//function to add commas to numbers greater than 999.909  
 function numberWithCommas(x) {
     var parts = x.toString().split(".");
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     return parts.join(".");
 }
 
+//submit function to open email to send extra documents
 function myFunction() {
 	var email = 'maribeth@visitdallas.com';
 	var subject = eventOrganization + ', ' + eventName + " - Post Event: Supplemental Documents";
 	window.location.href='mailto:'+email+'?subject='+subject;
 }
 
+//adds "()" and "-" to phone numbers
 function formatPhoneNumber(phoneNumberString) {
 	var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
 	var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
@@ -363,7 +355,9 @@ function formatPhoneNumber(phoneNumberString) {
 	return null
 }
 
+//jquery ui date picker
 $(document).ready(function () {
+    //event start date
     $("#00N0b000007v1mP").datepicker({
         // minDate: 0,
         onSelect: function () {
@@ -388,6 +382,7 @@ $(document).ready(function () {
             dt2.datepicker('option', 'minDate', minDate);
         }
     });
+    //event end date
     $('#00N0b000007v1qc').datepicker({
         // minDate: 0
     });
