@@ -7,7 +7,7 @@ var totalRevenue = 0;
 var finalDTPIDAmountDisplay = document.getElementById("finalDTPIDAmountDisplay");
 var finalDTPIDAmount = 0;
 var amountRequested = 0;
-var amountRequestedDisplay = document.getElementById("00N0b00000BQW8e");
+var amountRequestedDisplay = document.getElementById("00N0b00000Cbqrv");
 var preapprovedAmount = 0;
 var preapprovedAmountDisplay = document.getElementById("preapprovedAmount");
 var mobileDisplay = document.getElementById("mobile");
@@ -31,7 +31,7 @@ $(".room-fields").change(function(){
 $(".form-amounts").change(function(){
 	if(this.id == "preapprovedAmount"){
 		preapprovedAmount = Number(this.value);
-	} else if (this.id == "00N0b00000BQW8e"){
+	} else if (this.id == "00N0b00000Cbqrv"){
 		amountRequested = Number(this.value);
 	}
 	checkRequested();
