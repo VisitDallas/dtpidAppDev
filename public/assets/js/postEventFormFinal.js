@@ -1,8 +1,5 @@
 var estimationSelection = document.getElementById("00N0b000009gtNd");
 var estimationChoice0 = document.getElementById("estimationChoice0");
-// var estimationChoice1 = document.getElementById("estimationChoice1");
-// var estimationChoice2 = document.getElementById("estimationChoice2");
-// var estimationChoice3 = document.getElementById("estimationChoice3");
 var estimationResult = document.getElementById("estimationCalculation");
 var estimationChoiceFactorDisplay = document.getElementById("estimationChoiceFactorDisplay");
 var estimationChoiceFactor = 0;
@@ -30,13 +27,13 @@ var totalEventBudgetDisplay = document.getElementById("00N0b00000CbolR");
 var totalEventBudget = 0;
 var percentDTPIDTotalDisplay = document.getElementById("percentDTPIDTotalDisplay");
 var percentDTPIDTotal = 0;
-var eventMarketingTotalDisplay = document.getElementById("00N0b00000APpKT");
+// var eventMarketingTotalDisplay = document.getElementById("00N0b00000APpKT");
 var eventMarketingTotal = 0;
-var eventStaffingTotalDisplay = document.getElementById("00N0b00000APr5I");
+// var eventStaffingTotalDisplay = document.getElementById("00N0b00000APr5I");
 var eventStaffingTotal = 0;
-var eventProductionTotalDisplay = document.getElementById("00N0b00000APrKd");
+// var eventProductionTotalDisplay = document.getElementById("00N0b00000APrKd");
 var eventProductionTotal = 0;
-var eventOtherTotalDisplay = document.getElementById("00N0b00000BgxJt");
+// var eventOtherTotalDisplay = document.getElementById("00N0b00000BgxJt");
 var eventOtherTotal = 0;
 var summedDTPIDFundsDisplay = document.getElementById("summedDTPIDFundsDisplay");
 var summedDTPIDFunds = 0;
@@ -58,17 +55,14 @@ estimationSelection.addEventListener("change", function(){
 	//change which classes to hide and factor based on selection
 	if (estimationSelection.selectedIndex == 1){
 		document.getElementById("estimationChoice1").classList.remove("hide");
-		estimationChoiceFactor = 0.09;
 		showEstimationChoiceFactor(0.09);
 	} else if (estimationSelection.selectedIndex == 2){
 		document.getElementById("estimationChoice2").classList.remove("hide");
-		// estimationChoiceFactor = 1.0;
 		showEstimationChoiceFactor(1.0);
 		//this option allows you to change room rate
 		hotelRoomRateDisplay.removeAttribute('readonly');
 	} else if (estimationSelection.selectedIndex == 3){
 		document.getElementById("estimationChoice3").classList.remove("hide");
-		// estimationChoiceFactor = 0.6;
 		showEstimationChoiceFactor(0.6);
 	} else {
 		clearEstimationChoice();
@@ -76,6 +70,7 @@ estimationSelection.addEventListener("change", function(){
 	doEstimationCalculations();
 });
 
+//this function takes an int and inputs it for the estimation choice factor
 function showEstimationChoiceFactor(int){
 	estimationChoiceFactor = int;
 	estimationChoiceFactorDisplay.textContent = estimationChoiceFactor;
@@ -97,16 +92,20 @@ function doEstimationCalculations(){
 }
 
 estimationNumberInputDisplay.addEventListener("change", function(){
-	estimationNumberInputDisplay.value = parseFloat(estimationNumberInputDisplay.value.replace(/,/g, ''));
-	estimationNumberInput = Number(estimationNumberInputDisplay.value);
+	estimationNumberInput = Number(parseNumber(estimationNumberInputDisplay));
 	doEstimationCalculations();
-	matchTotals();
-	showSubmit();
-	doTotalBudgetCalculations();
-	doLessPaymentsCalculations();
-	overPercentage();
+	dtpidFundsCalculations();
 	estimationNumberInputDisplay.value = numberWithCommas(estimationNumberInput);
 });
+
+function dtpidFundsCalculations(){
+	doLessPaymentsCalculations();
+	doTotalBudgetCalculations();
+	addDTPIDFundingCategories();
+	matchTotals();
+	overPercentage();
+	showSubmit();
+}
 
 hotelRoomRateDisplay.addEventListener("change", function(){
 	hotelRoomRate = Number(this.value);
@@ -116,13 +115,13 @@ hotelRoomRateDisplay.addEventListener("change", function(){
 });
 
 dtpidFundsPreApprovedDisplay.addEventListener("change", function(){
-	dtpidFundsPreApprovedDisplay.value = parseFloat(dtpidFundsPreApprovedDisplay.value.replace(/,/g, ''));
-	dtpidFundsPreApproved = Number(dtpidFundsPreApprovedDisplay.value);
+	dtpidFundsPreApproved = Number(parseNumber(dtpidFundsPreApprovedDisplay));
 	checkPreApprovedOverRequested();
 	dtpidFundsPreApprovedDisplay.value = numberWithCommas(dtpidFundsPreApproved);
 });
 
 lessAnyPaymentsDisplay.addEventListener("change", function(){
+	lessAnyPayments = Number(parseNumber(lessAnyPaymentsDisplay));
 	doLessPaymentsCalculations();
 });
 
@@ -132,47 +131,19 @@ totalEventBudgetDisplay.addEventListener("change", function(){
 	showSubmit();
 });
 
-eventMarketingTotalDisplay.addEventListener("change", function(){
-	eventMarketingTotal = Number(parseNumber(eventMarketingTotalDisplay));
-	addDTPIDFundingCategories();
-	eventMarketingTotalDisplay.value = numberWithCommas(eventMarketingTotal);
-	matchTotals();
-	showSubmit();
-});
-
-//taking out comments from variable
-function parseNumber(var1){
-	var1.value = parseFloat(var1.value.replace(/,/g, ''));
-	return var1.value;
-}
-
-eventStaffingTotalDisplay.addEventListener("change", function(){
-	eventStaffingTotalDisplay.value = parseFloat(eventStaffingTotalDisplay.value.replace(/,/g, ''));
-	eventStaffingTotal = Number(eventStaffingTotalDisplay.value);
-	addDTPIDFundingCategories();
-	eventStaffingTotalDisplay.value = numberWithCommas(eventStaffingTotal);
-	matchTotals();
-	showSubmit();
-});
-
-eventProductionTotalDisplay.addEventListener("change", function(){
-	eventProductionTotalDisplay.value = parseFloat(eventProductionTotalDisplay.value.replace(/,/g, ''));
-	eventProductionTotal = Number(eventProductionTotalDisplay.value);
-	addDTPIDFundingCategories();
-	eventProductionTotalDisplay.value = numberWithCommas(eventProductionTotal);
-	matchTotals();
-	showSubmit();
-});
-
-eventOtherTotalDisplay.addEventListener("change", function(){
-	eventOtherTotalDisplay.value = parseFloat(eventOtherTotalDisplay.value.replace(/,/g, ''));
-	eventOtherTotal = Number(eventOtherTotalDisplay.value);
-	addDTPIDFundingCategories();
-	eventOtherTotalDisplay.value = numberWithCommas(eventOtherTotal);
-	matchTotals();
-	showSubmit();
-});
-
+//event sums fields are assigned values and then calculated
+$(".eventSum").change(function(){
+	if(this.id == "00N0b00000APpKT"){ 
+		eventMarketingTotal = Number(parseNumber(this));
+	} else if(this.id == "00N0b00000APrKd"){
+		eventStaffingTotal = Number(parseNumber(this));
+	} else if(this.id == "00N0b00000APr5I"){
+		eventProductionTotal = Number(parseNumber(this));
+	} else if(this.id == "00N0b00000BgxJt"){
+		eventOtherTotal = Number(parseNumber(this));
+	}
+	sumFieldsCalc();
+})
 
 eventOrganizationDisplay.addEventListener("change", function(){
 	eventOrganization = eventOrganizationDisplay.value;
@@ -205,8 +176,6 @@ function checkPreApprovedOverRequested(){
 }
 
 function doLessPaymentsCalculations(){
-	lessAnyPaymentsDisplay.value = parseFloat(lessAnyPaymentsDisplay.value.replace(/,/g, ''));
-	lessAnyPayments = Number(lessAnyPaymentsDisplay.value);
 	finalPaymentDue = requestedAmount - lessAnyPayments;
 	lessAnyPaymentsDisplay.value = numberWithCommas(lessAnyPayments);
 	finalPaymentDueDisplay.value = numberWithCommas(finalPaymentDue);
@@ -221,6 +190,28 @@ function dtpidFundsCalculations(){
 	showSubmit();
 }
 
+//adds commas when needed to the sum fields
+function setSumDisplayFields(){
+	document.getElementById("00N0b00000APpKT").value = numberWithCommas(eventMarketingTotal);
+	document.getElementById("00N0b00000APrKd").value = numberWithCommas(eventStaffingTotal);
+	document.getElementById("00N0b00000APr5I").value = numberWithCommas(eventProductionTotal);
+	document.getElementById("00N0b00000BgxJt").value = numberWithCommas(eventOtherTotal);
+}
+
+//taking out comments from variable
+function parseNumber(var1){
+	var1.value = parseFloat(var1.value.replace(/,/g, ''));
+	return var1.value;
+}
+
+//all functions that are used in the sum fields
+function sumFieldsCalc(){
+	addDTPIDFundingCategories();
+	setSumDisplayFields();
+	matchTotals();
+	showSubmit();
+}
+
 function doTotalBudgetCalculations(){
 	totalEventBudgetDisplay.value = parseFloat(totalEventBudgetDisplay.value.replace(/,/g, ''));
 	var totalEventBudgetDisplay2 = totalEventBudgetDisplay.value;
@@ -231,7 +222,7 @@ function doTotalBudgetCalculations(){
 }
 
 function addDTPIDFundingCategories(){
-	summedDTPIDFunds = eventMarketingTotal + eventStaffingTotal + eventProductionTotal + eventOtherTotal;
+	summedDTPIDFunds = Number(eventMarketingTotal + eventStaffingTotal + eventProductionTotal + eventOtherTotal);
 	summedDTPIDFundsDisplay.textContent = numberWithCommas(summedDTPIDFunds);
 }
 
