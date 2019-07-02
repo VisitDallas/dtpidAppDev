@@ -55,6 +55,7 @@ var formTimesFunded = document.getElementById("00N0b000007v56k");
 var submitButton = document.getElementById("submit");
 var requestedAmountDisplay = document.getElementById("00N0b00000BQW8Z");
 var requestedAmount = 0;
+var currentDate = document.getElementById("00N0b00000CclxK");
 
 statePicklistDisplay.addEventListener("change", function(){
 	statePicklistValue = statePicklistDisplay.value;
@@ -365,6 +366,10 @@ function numberWithCommas(x) {
     return parts.join(".");
 }
 
+function todaysDate() {
+	var today = 
+}
+
 $(document).ready(function () {
     $("#00N0b000007v1mP").datepicker({
         // dateFormat: "dd-M-yy",
@@ -399,7 +404,17 @@ $(document).ready(function () {
     });
 });
 
+function inputCurrentDate(){ 
+	var d = new Date();
+	var month = d.getMonth()+1;
+	var day = d.getDate();
+	var output = (month<10 ? '0' : '') + month + '/' + (day<10 ? '0' : '') + day + '/' + d.getFullYear();
+	console.log(output);
+};
 
+window.onload = function() {
+  yourFunction(param1, param2);
+};
 
 
 
