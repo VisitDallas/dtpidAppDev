@@ -15,6 +15,7 @@ var hotelNameDisplay = document.getElementById("company");
 var hotelName = "";
 var eventNameDisplay = document.getElementById("00N0b000007uwKK");
 var eventName = "";
+var currentDate = document.getElementById("00N0b00000CclxP");
 
 $(".room-fields").change(function(){
 	if(this.id == "00N0b000009gtVs"){
@@ -281,6 +282,18 @@ $( function() {
 		source: availableTags
 	});
 });
+
+function inputCurrentDate(){ 
+	var d = new Date();
+	var month = d.getMonth()+1;
+	var day = d.getDate();
+	var output = (month<10 ? '0' : '') + month + '/' + (day<10 ? '0' : '') + day + '/' + d.getFullYear();
+	currentDate.value = output;
+};
+
+window.onload = function() {
+  inputCurrentDate();
+};
 
 
 

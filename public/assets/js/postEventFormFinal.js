@@ -42,6 +42,7 @@ var eventNameDisplay = document.getElementById("00N0b000007uwKK");
 var eventName = "";
 var requestedAmountDisplay = document.getElementById("00N0b00000BQW8e");
 var requestedAmount = 0;
+var currentDate = document.getElementById("00N0b00000CclxP");
 
 //event listeners
 //estimation choice event listener
@@ -387,6 +388,18 @@ $(document).ready(function () {
         // minDate: 0
     });
 });
+
+function inputCurrentDate(){ 
+	var d = new Date();
+	var month = d.getMonth()+1;
+	var day = d.getDate();
+	var output = (month<10 ? '0' : '') + month + '/' + (day<10 ? '0' : '') + day + '/' + d.getFullYear();
+	currentDate.value = output;
+};
+
+window.onload = function() {
+  inputCurrentDate();
+};
 
 
 

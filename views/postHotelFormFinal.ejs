@@ -59,32 +59,14 @@
 </nav>
 
 <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
-<!--<script src="https://www.google.com/recaptcha/api.js"></script>
-<script>
- function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
-</script> -->
-
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: Please add the following <FORM> element to your page.             -->
-<!--  ----------------------------------------------------------------------  -->
 
 <div class="container">
 	
-
-
 <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" onsubmit="return myFunction();">
 
 <!-- <input type=hidden name='captcha_settings' value='{"keyname":"preHotel","fallback":"true","orgId":"00D0b000000RDhe","ts":""}'> -->
 <input type=hidden name="oid" value="00D0b000000RDhe">
 <input type=hidden name="retURL" value="http://www.dtpid.com/thank-you-for-completing-your-post-event-form">
-
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-<!--  these lines if you wish to test in debug mode.                          -->
-<!--  <input type="hidden" name="debug" value=1>                              -->
-<!--  <input type="hidden" name="debugEmail"                                  -->
-<!--  value="naskam@visitdallas.com">                                         -->
-<!--  ----------------------------------------------------------------------  -->
 
 	<h3>DTPID Post-Event Hotel Reimbursment Form</h3>
 	<p><em>Please complete this form 30 days post your event</em></p>
@@ -99,6 +81,15 @@
 
 		<!-- <label>Event End Date:</label>
 		<span class="dateInput dateOnlyInput"><input  id="00N0b000007v1qc" name="00N0b000007v1qc" size="12" type="text" /></span> -->
+	</div>
+
+	<div class="form-group form-inline hide" id="dateTester">
+		<label>
+			Application Date:
+		</label>
+		<span class="dateInput dateOnlyInput">
+			<input  id="00N0b00000CclxP" class="form-control" name="00N0b00000CclxP" placeholder="mm/dd/yyyy" size="12" type="text"/>
+		</span>
 	</div>
 
 	<div class="form-horizontal">
