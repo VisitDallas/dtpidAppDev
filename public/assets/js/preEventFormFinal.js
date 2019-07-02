@@ -405,7 +405,7 @@ function inputCurrentDate(){
 	var month = d.getMonth()+1;
 	var day = d.getDate();
 	var output = (month<10 ? '0' : '') + month + '/' + (day<10 ? '0' : '') + day + '/' + d.getFullYear();
-	console.log(output);
+	currentDate.value = output;
 };
 
 window.onload = function() {
