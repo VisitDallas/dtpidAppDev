@@ -366,10 +366,6 @@ function numberWithCommas(x) {
     return parts.join(".");
 }
 
-function todaysDate() {
-	var today = 
-}
-
 $(document).ready(function () {
     $("#00N0b000007v1mP").datepicker({
         // dateFormat: "dd-M-yy",
@@ -413,7 +409,7 @@ function inputCurrentDate(){
 };
 
 window.onload = function() {
-  yourFunction(param1, param2);
+  inputCurrentDate();
 };
 
 
