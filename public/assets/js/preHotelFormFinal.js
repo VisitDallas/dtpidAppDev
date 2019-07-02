@@ -9,18 +9,12 @@ var finalDTPIDAmount = 0;
 var amountRequestedDisplay = document.getElementById("00N0b00000BQW8Z");
 var amountRequested = 0;
 var requestedAmt = document.getElementById("requestedAmt");
-// var eventStartDate1 = document.getElementById("00N0b000007v1mP");
-// var eventStartDate2 = document.getElementById("eventStartDateCopy");
-// var eventEndDate1 = document.getElementById("00N0b000007v1qc");
-// var eventEndDate2 = document.getElementById("eventEndDateCopy");
-// var eventDecisionDate1 = document.getElementById("00N0b00000Bf6oE");
-// var eventDecisionDate2 = document.getElementById("eventDecisionDateCopy");
 var eventPreviousMeetingDate1 = document.getElementById("00N0b0000082rE7");
-// var eventPreviousMeetingDate2 = document.getElementById("eventPreviousMeetingDateCopy");
 var checkboxDallas = document.getElementById("00N0b0000082r6W");
 var labelIfYes = document.getElementById("labelIfYes");
 var mobileDisplay = document.getElementById("mobile");
 var mobileValue = "";
+var currentDate = document.getElementById("00N0b00000CclxK");
 
 hotelRoomNightDisplay.addEventListener("change", function(){
 	hotelRoomNightDisplay.value = parseFloat(hotelRoomNightDisplay.value.replace(/,/g, ''));
@@ -293,3 +287,26 @@ $( function() {
 		source: availableTags
 	});
 });
+
+function inputCurrentDate(){ 
+	var d = new Date();
+	var month = d.getMonth()+1;
+	var day = d.getDate();
+	var output = (month<10 ? '0' : '') + month + '/' + (day<10 ? '0' : '') + day + '/' + d.getFullYear();
+	currentDate.value = output;
+};
+
+window.onload = function() {
+  inputCurrentDate();
+};
+
+
+
+
+
+
+
+
+
+
+
