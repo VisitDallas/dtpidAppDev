@@ -52,6 +52,8 @@ var orgZipDisplay = document.getElementById("zip");
 var previousFundingCheck = document.getElementById("00N0b000007v1qm");
 var ocaCheckbox = document.getElementById("ocaCheckbox");
 var ocaField = document.getElementById("00N0b00000Bw1rS");
+var sportsCheckbox = document.getElementById("sportsCheckbox");
+var leadTypeSelector = document.getElementById("00N0b00000Cd4jc");
 var labelTimesFunded = document.getElementById("labelTimesFunded");
 var formTimesFunded = document.getElementById("00N0b000007v56k");
 var submitButton = document.getElementById("submit");
@@ -202,6 +204,14 @@ ocaCheckbox.addEventListener("change", function(){
 		ocaField.value = "OCA";
 	} else {
 		ocaField.value = "";
+	}
+})
+
+sportsCheckbox.addEventListener("change", function(){
+	if (sportsCheckbox.checked) {
+		leadTypeSelector.value = "Sports";
+	} else {
+		leadTypeSelector.value = "Event";
 	}
 })
 
