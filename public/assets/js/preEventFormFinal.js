@@ -50,6 +50,8 @@ var orgAddressDisplay = document.getElementById("street");
 var orgCityDisplay = document.getElementById("city");
 var orgZipDisplay = document.getElementById("zip");
 var previousFundingCheck = document.getElementById("00N0b000007v1qm");
+var ocaCheckbox = document.getElementById("ocaCheckbox");
+var ocaField = document.getElementById("00N0b00000Bw1rS");
 var labelTimesFunded = document.getElementById("labelTimesFunded");
 var formTimesFunded = document.getElementById("00N0b000007v56k");
 var submitButton = document.getElementById("submit");
@@ -192,6 +194,14 @@ previousFundingCheck.addEventListener("change", function(){
 		labelTimesFunded.classList.add("hide");
 		formTimesFunded.classList.add("hide");
 		formTimesFunded.value = 0;
+	}
+})
+
+ocaCheckbox.addEventListener("change", function(){
+	if (ocaCheckbox.checked) {
+		ocaField.value = "OCA";
+	} else {
+		ocaField.value = "";
 	}
 })
 
