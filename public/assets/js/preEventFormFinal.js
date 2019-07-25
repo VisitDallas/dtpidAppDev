@@ -60,6 +60,9 @@ var submitButton = document.getElementById("submit");
 var requestedAmountDisplay = document.getElementById("00N0b00000BQW8Z");
 var requestedAmount = 0;
 var currentDate = document.getElementById("00N0b00000CclxK");
+var partialPaymentPercentage = document.getElementById("00N0b00000899QC");
+var partialPaymentMath = .25;
+var partialRequestedAmount = document.getElementById("00N0b00000CdAH9");
 
 statePicklistDisplay.addEventListener("change", function(){
 	statePicklistValue = statePicklistDisplay.value;
@@ -192,10 +195,15 @@ previousFundingCheck.addEventListener("change", function(){
 	if (previousFundingCheck.checked) {
 		labelTimesFunded.classList.remove("hide");
 		formTimesFunded.classList.remove("hide");
+		partialPaymentPercentage.value = "50%";
+		partialPaymentMath = .5;
 	} else {
 		labelTimesFunded.classList.add("hide");
 		formTimesFunded.classList.add("hide");
 		formTimesFunded.value = 0;
+		partialPaymentPercentage = "25%";
+		partialPaymentMath = .25;
+
 	}
 })
 
@@ -269,6 +277,7 @@ function doEstimationCalculations(){
 	finalDTPIDAmount = Math.floor(totalRevenue / 10);
 	checkIfOverMax();
 	setRequestedAmount();
+	partialCalculator();
 	finalDTPIDAmountDisplay.textContent = numberWithCommas(finalDTPIDAmount);
 	totalDTPIDFundsDisplay.textContent = numberWithCommas(requestedAmount);
 	matchDTPIDFunds2.textContent = numberWithCommas(requestedAmount);	
@@ -369,6 +378,11 @@ function resetVenueDisplays(){
 	eventLocationZipDisplay.value = orgZipDisplay.value;
 	eventLocationNameDisplay.value = orgNameDisplay.value;	
 	eventLocationStateDisplay.value = statePicklistValue;
+}
+
+function partialCalculator(){
+	//calculate the partial payment
+	partialRequestedAmount.value = partialPaymentMath * requestedAmount;
 }
 
 function formatPhoneNumber(phoneNumberString) {
