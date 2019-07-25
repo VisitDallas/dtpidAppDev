@@ -201,7 +201,7 @@ previousFundingCheck.addEventListener("change", function(){
 		labelTimesFunded.classList.add("hide");
 		formTimesFunded.classList.add("hide");
 		formTimesFunded.value = 0;
-		partialPaymentPercentage = "25%";
+		partialPaymentPercentage.value = "25%";
 		partialPaymentMath = .25;
 
 	}
@@ -232,6 +232,7 @@ requestedAmountDisplay.addEventListener("change", function(){
 	addDTPIDFundingCategories();
 	matchTotals();
 	overPercentage();
+	partialCalculator();
 	showSubmit();
 })
 
