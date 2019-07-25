@@ -197,12 +197,14 @@ previousFundingCheck.addEventListener("change", function(){
 		formTimesFunded.classList.remove("hide");
 		partialPaymentPercentage.value = "50%";
 		partialPaymentMath = .5;
+		partialCalculator();
 	} else {
 		labelTimesFunded.classList.add("hide");
 		formTimesFunded.classList.add("hide");
 		formTimesFunded.value = 0;
 		partialPaymentPercentage.value = "25%";
 		partialPaymentMath = .25;
+		partialCalculator();
 
 	}
 })
