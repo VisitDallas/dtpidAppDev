@@ -15,6 +15,7 @@ var labelIfYes = document.getElementById("labelIfYes");
 var mobileDisplay = document.getElementById("mobile");
 var mobileValue = "";
 var currentDate = document.getElementById("00N0b00000CclxK");
+var finalRequestedAmount = document.getElementById("00N0b00000Cbqrv");
 
 hotelRoomNightDisplay.addEventListener("change", function(){
 	hotelRoomNightDisplay.value = parseFloat(hotelRoomNightDisplay.value.replace(/,/g, ''));
@@ -37,33 +38,12 @@ hotelRoomRateDisplay.addEventListener("change", function(){
 amountRequestedDisplay.addEventListener("change", function(){
 	amountRequestedDisplay.value = parseFloat(amountRequestedDisplay.value.replace(/,/g, ''));
 	amountRequested = Number(this.value);
-	checkRequested();
+	if(amountRequested > finalDTPIDAmount){
+		amountRequested = finalDTPIDAmount;
+	}
 	amountRequestedDisplay.value = numberWithCommas(amountRequested);
+	finalRequestedAmount.value = numberWithCommas(amountRequested);
 })
-
-// eventStartDate2.addEventListener("change", function(){
-// 	var eventStartDate3 = new Date(eventStartDate2.value);
-// 	eventStartDate3.setUTCHours(11);
-// 	eventStartDate1.value = eventStartDate3.toLocaleDateString("en-US");
-// })
-
-// eventEndDate2.addEventListener("change", function(){
-// 	var eventEndDate3 = new Date(eventEndDate2.value);
-// 	eventEndDate3.setUTCHours(11);
-// 	eventEndDate1.value = eventEndDate3.toLocaleDateString("en-US");
-// })
-
-// eventDecisionDate2.addEventListener("change", function(){
-// 	var eventDecisionDate3 = new Date(eventDecisionDate2.value);
-// 	eventDecisionDate3.setUTCHours(11);
-// 	eventDecisionDate1.value = eventDecisionDate3.toLocaleDateString("en-US");
-// })
-
-// eventPreviousMeetingDate2.addEventListener("change", function(){
-// 	var eventPreviousMeetingDate3 = new Date(eventPreviousMeetingDate2.value);
-// 	eventPreviousMeetingDate3.setUTCHours(11);
-// 	eventPreviousMeetingDate1.value = eventPreviousMeetingDate3.toLocaleDateString("en-US");
-// })
 
 checkboxDallas.addEventListener("change", function(){
 	eventPreviousMeetingDate1.classList.toggle('hide');
@@ -80,13 +60,6 @@ function doMaximumEligibleCalculations(){
 	totalRevenue = hotelRoomNight * hotelRoomRate;
 	finalDTPIDAmount = Math.floor(totalRevenue / 10);
 	checkIfOverMax();
-}
-
-function checkRequested(){
-	if(amountRequested > finalDTPIDAmount){
-		amountRequested = finalDTPIDAmount;
-		amountRequestedDisplay.value = numberWithCommas(amountRequested);
-	}
 }
 
 function displayMaximumEligibleCalculations(){
