@@ -62,7 +62,8 @@ var requestedAmount = 0;
 var currentDate = document.getElementById("00N0b00000CclxK");
 var partialPaymentPercentage = document.getElementById("00N0b00000899QC");
 var partialPaymentMath = .25;
-var partialRequestedAmount = document.getElementById("00N0b00000CdAH9");
+var partialRequestedAmount = document.getElementById("00N0b00000899kp");
+var finalRequestedAmount = document.getElementById("00N0b00000Cbqrv");
 
 statePicklistDisplay.addEventListener("change", function(){
 	statePicklistValue = statePicklistDisplay.value;
@@ -365,16 +366,6 @@ $("#locationCheck").click(function(){
     }
   });
 
-// $(".orgInfo").change(function(){
-// 	if(!$("#locationCheck").is(":checked")){
-// 		if(this.id == "company"){
-// 			$("#00N0b00000BOCDc").val = this.value;
-// 		}
-// 	} else{
-// 		console.log("cannot change");
-// 	}
-// })
-
 function resetVenueDisplays(){
 	eventLocationAddressDisplay.value = orgAddressDisplay.value;
 	eventLocationCityDisplay.value = orgCityDisplay.value;
@@ -385,7 +376,10 @@ function resetVenueDisplays(){
 
 function partialCalculator(){
 	//calculate the partial payment
+	var partialRequestedAmount1 = partialPaymentMath * requestedAmount;
 	partialRequestedAmount.value = partialPaymentMath * requestedAmount;
+	//calculate the final payment
+	finalRequestedAmount.value = requestedAmount - partialRequestedAmount1;
 }
 
 function formatPhoneNumber(phoneNumberString) {
