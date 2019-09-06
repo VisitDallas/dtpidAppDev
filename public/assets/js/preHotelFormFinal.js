@@ -38,9 +38,7 @@ hotelRoomRateDisplay.addEventListener("change", function(){
 amountRequestedDisplay.addEventListener("change", function(){
 	amountRequestedDisplay.value = parseFloat(amountRequestedDisplay.value.replace(/,/g, ''));
 	amountRequested = Number(this.value);
-	if(amountRequested > finalDTPIDAmount){
-		amountRequested = finalDTPIDAmount;
-	}
+	checkRequested();
 	amountRequestedDisplay.value = numberWithCommas(amountRequested);
 	finalRequestedAmount.value = numberWithCommas(amountRequested);
 })
@@ -60,6 +58,14 @@ function doMaximumEligibleCalculations(){
 	totalRevenue = hotelRoomNight * hotelRoomRate;
 	finalDTPIDAmount = Math.floor(totalRevenue / 10);
 	checkIfOverMax();
+}
+
+function checkRequested(){
+	if(amountRequested > finalDTPIDAmount){
+		amountRequested = finalDTPIDAmount;
+		amountRequestedDisplay.value = numberWithCommas(amountRequested);
+		finalRequestedAmount.value = numberWithCommas(amountRequested);
+	}
 }
 
 function displayMaximumEligibleCalculations(){
