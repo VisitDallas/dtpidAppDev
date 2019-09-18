@@ -15,7 +15,6 @@ var labelIfYes = document.getElementById("labelIfYes");
 var mobileDisplay = document.getElementById("mobile");
 var mobileValue = "";
 var currentDate = document.getElementById("00N0b00000CclxK");
-var finalRequestedAmount = document.getElementById("00N0b00000Cbqrv");
 
 hotelRoomNightDisplay.addEventListener("change", function(){
 	hotelRoomNightDisplay.value = parseFloat(hotelRoomNightDisplay.value.replace(/,/g, ''));
@@ -40,7 +39,6 @@ amountRequestedDisplay.addEventListener("change", function(){
 	amountRequested = Number(this.value);
 	checkRequested();
 	amountRequestedDisplay.value = numberWithCommas(amountRequested);
-	finalRequestedAmount.value = numberWithCommas(amountRequested);
 })
 
 checkboxDallas.addEventListener("change", function(){
@@ -64,7 +62,6 @@ function checkRequested(){
 	if(amountRequested > finalDTPIDAmount){
 		amountRequested = finalDTPIDAmount;
 		amountRequestedDisplay.value = numberWithCommas(amountRequested);
-		finalRequestedAmount.value = numberWithCommas(amountRequested);
 	}
 }
 
