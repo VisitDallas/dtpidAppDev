@@ -4,7 +4,7 @@
   "description": "dtpid forms and app",
   "main": "app.js",
   "scripts": {
-    "start": "npm run lite",
+    "start1": "npm run lite",
     "test": "echo \\\"Error: no test specified\\\" && exit 1\"",
     "start": "node app.js",
     "lite": "lite-server"
