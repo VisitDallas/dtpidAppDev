@@ -4,10 +4,9 @@
   "description": "dtpid forms and app",
   "main": "app.js",
   "scripts": {
-    "start1": "npm run lite",
+    "dev": "lite-server",
     "test": "echo \\\"Error: no test specified\\\" && exit 1\"",
-    "start": "node app.js",
-    "lite": "lite-server"
+    "start": "node app.js"
   },
   "keywords": [
     "heroku",
