@@ -84,7 +84,7 @@ hotelRoomRateDisplay.addEventListener("change", function(){
 
 dtpidFundsPreApprovedDisplay.addEventListener("change", function(){
 	dtpidFundsPreApproved = Number(parseNumber(dtpidFundsPreApprovedDisplay));
-	checkPreApprovedOverRequested();
+	checkPreApprovedOverMax();
 	dtpidFundsPreApprovedDisplay.value = numberWithCommas(dtpidFundsPreApproved);
 });
 
@@ -137,10 +137,10 @@ function checkRequestedOverVar(int){
 	}
 }
 
-//see if requestested is more than pre approved
-function checkPreApprovedOverRequested(){
-	if (dtpidFundsPreApproved >= requestedAmount){
-		dtpidFundsPreApproved = requestedAmount;
+//see if requested is more than max
+function checkPreApprovedOverMax(){
+	if (dtpidFundsPreApproved >= 35001){
+		dtpidFundsPreApproved = 35000;
 	}
 }
 
@@ -257,19 +257,6 @@ $(".phone").change(function(){
 		mobileDisplay.value = formatPhoneNumber(this.value);
 	}
 });
-
-// function doEstimationCalculations(){
-// 	estimationChoiceResult = Math.round(estimationNumberInput * estimationChoiceFactor * 1)/1;
-// 	estimationChoiceResultDisplay.textContent = numberWithCommas(estimationChoiceResult);
-// 	hotelRoomNights = Number(estimationChoiceResult);
-// 	hotelRoomNightsDisplay.value = numberWithCommas(estimationChoiceResult);
-// 	totalRevenue = Math.round(estimationChoiceResult * hotelRoomRate * 1e12) / 1e12;
-// 	totalRevenueDisplay.textContent = numberWithCommas(totalRevenue);
-// 	finalDTPIDAmount = Math.floor(totalRevenue / 10);
-// 	checkIfOverMax();
-// 	setRequestedAmount();
-// 	setPreApprovedAmount();
-// }
 
 function setRequestedAmount(){
 	requestedAmount = finalDTPIDAmount;
