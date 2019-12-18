@@ -126,6 +126,7 @@ requestedAmountDisplay.addEventListener("change", function(){
 	requestedAmount = Number(parseNumber(requestedAmountDisplay));
 	checkRequestedOverVar(finalDTPIDAmount);
 	checkRequestedOverVar(dtpidFundsPreApproved);
+	sumFieldsCalc();
 	setFundsDisplayNumbers(requestedAmount);
 })
 
