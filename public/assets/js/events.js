@@ -1,5 +1,5 @@
 let percentDTPIDFundsTotal = 0;
-let totalEventBudgetDisplay = document.getElementsByClassName("totEBudget");
+let totalEventBudgetDisplay = document.getElementsByClassName("totEBudget").item(0);
 
 totalEventBudgetDisplay,addEventListener("change", totalFundingFunctions);
 
