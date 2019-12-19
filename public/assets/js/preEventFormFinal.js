@@ -22,10 +22,10 @@ var totalRevenue = 0;
 var finalDTPIDAmountDisplay = document.getElementById("finalDTPIDAmountDisplay");
 var finalDTPIDAmount = 0;
 var totalDTPIDFundsDisplay = document.getElementById("totalDTPIDFundsDisplay");
-var totalEventBudgetDisplay = document.getElementById("00N0b00000CbKPj");
-var totalEventBudget = 0;
-var percentDTPIDFundsTotalDisplay = document.getElementById("percentDTPIDFundsTotalDisplay");
-var percentDTPIDFundsTotal = 0;
+// var totalEventBudgetDisplay = document.getElementById("00N0b00000CbKPj");
+// var totalEventBudget = 0;
+// var percentDTPIDFundsTotalDisplay = document.getElementById("percentDTPIDFundsTotalDisplay");
+// var percentDTPIDFundsTotal = 0;
 var eventMarketingTotalDisplay = document.getElementById("00N0b0000088woe");
 var eventMarketingTotal = 0;
 var eventStaffingTotalDisplay = document.getElementById("00N0b0000089S0U");
@@ -292,14 +292,14 @@ function setRequestedAmount(){
 	requestedAmountDisplay.value = numberWithCommas(requestedAmount);
 }
 
-function doTotalBudgetCalculations(){
-	totalEventBudgetDisplay.value = parseFloat(totalEventBudgetDisplay.value.replace(/,/g, ''));
-	var totalEventBudgetDisplay2 = totalEventBudgetDisplay.value;
-	totalEventBudget = Number(totalEventBudgetDisplay.value) / 100;
-	percentDTPIDFundsTotal = Math.floor(requestedAmount / totalEventBudget);
-	percentDTPIDFundsTotalDisplay.textContent = percentDTPIDFundsTotal;
-	totalEventBudgetDisplay.value = numberWithCommas(totalEventBudgetDisplay2);
-}
+// function doTotalBudgetCalculations(){
+// 	totalEventBudgetDisplay.value = parseFloat(totalEventBudgetDisplay.value.replace(/,/g, ''));
+// 	var totalEventBudgetDisplay2 = totalEventBudgetDisplay.value;
+// 	totalEventBudget = Number(totalEventBudgetDisplay.value) / 100;
+// 	percentDTPIDFundsTotal = Math.floor(requestedAmount / totalEventBudget);
+// 	percentDTPIDFundsTotalDisplay.textContent = percentDTPIDFundsTotal;
+// 	totalEventBudgetDisplay.value = numberWithCommas(totalEventBudgetDisplay2);
+// }
 
 function addDTPIDFundingCategories(){
 	summedDTPIDFunds = eventMarketingTotal + eventStaffingTotal + eventProductionTotal + eventOtherTotal;
@@ -389,12 +389,6 @@ function formatPhoneNumber(phoneNumberString) {
 		return '(' + match[1] + ') ' + match[2] + '-' + match[3]
 	}
 	return phoneNumberString;
-}
-
-function numberWithCommas(x) {
-    var parts = x.toString().split(".");
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    return parts.join(".");
 }
 
 $(document).ready(function () {
