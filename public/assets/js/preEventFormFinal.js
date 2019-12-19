@@ -21,11 +21,7 @@ var totalRevenueDisplay = document.getElementById("totalRevenueDisplay");
 var totalRevenue = 0;
 var finalDTPIDAmountDisplay = document.getElementById("finalDTPIDAmountDisplay");
 var finalDTPIDAmount = 0;
-var totalDTPIDFundsDisplay = document.getElementById("totalDTPIDFundsDisplay");
-// var totalEventBudgetDisplay = document.getElementById("00N0b00000CbKPj");
-// var totalEventBudget = 0;
-// var percentDTPIDFundsTotalDisplay = document.getElementById("percentDTPIDFundsTotalDisplay");
-// var percentDTPIDFundsTotal = 0;
+var totalDTPIDFundsDisplay = document.getElementById("totFDis");
 var eventMarketingTotalDisplay = document.getElementById("00N0b0000088woe");
 var eventMarketingTotal = 0;
 var eventStaffingTotalDisplay = document.getElementById("00N0b0000089S0U");
@@ -117,12 +113,6 @@ hotelRoomRateDisplay.addEventListener("change", function(){
 	doTotalBudgetCalculations();
 	overPercentage();
 })
-
-// totalEventBudgetDisplay.addEventListener("change", function(){
-// 	doTotalBudgetCalculations();
-// 	overPercentage();
-// 	showSubmit();
-// })
 
 eventMarketingTotalDisplay.addEventListener("change", function(){
 	eventMarketingTotalDisplay.value = parseFloat(eventMarketingTotalDisplay.value.replace(/,/g, ''));
@@ -415,10 +405,6 @@ $(document).ready(function () {
         minDate: 90
     });
 });
-
-function numberWithCommas(x) {
-    return x.toLocaleString();
-}
 
 function inputCurrentDate(){ 
 	var d = new Date();

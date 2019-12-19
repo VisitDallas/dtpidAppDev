@@ -24,10 +24,6 @@ var lessAnyPayments = 0;
 var finalPaymentDueDisplay = document.getElementById("00N0b00000Cbqrv");
 var finalPaymentDue = 0;
 var totalDTPIDFundsDisplay = document.getElementById("totalDTPIDFundsDisplay");
-var totalEventBudgetDisplay = document.getElementById("00N0b00000CbolR");
-var totalEventBudget = 0;
-var percentDTPIDTotalDisplay = document.getElementById("percentDTPIDTotalDisplay");
-var percentDTPIDTotal = 0;
 var eventMarketingTotal = 0;
 var eventStaffingTotal = 0;
 var eventProductionTotal = 0;
@@ -204,15 +200,6 @@ function sumFieldsCalc(){
 	showSubmit();
 }
 
-function doTotalBudgetCalculations(){
-	totalEventBudgetDisplay.value = parseFloat(totalEventBudgetDisplay.value.replace(/,/g, ''));
-	var totalEventBudgetDisplay2 = totalEventBudgetDisplay.value;
-	totalEventBudget = Number(totalEventBudgetDisplay.value) / 100;
-	percentDTPIDTotal = Math.floor(requestedAmount / totalEventBudget);
-	percentDTPIDTotalDisplay.textContent = percentDTPIDTotal;
-	totalEventBudgetDisplay.value = numberWithCommas(totalEventBudgetDisplay2);
-}
-
 function addDTPIDFundingCategories(){
 	summedDTPIDFunds = Number(eventMarketingTotal + eventStaffingTotal + eventProductionTotal + eventOtherTotal);
 	summedDTPIDFundsDisplay.textContent = numberWithCommas(summedDTPIDFunds);
@@ -236,16 +223,6 @@ function overPercentage(){
 		percentDTPIDTotalDisplay.classList.add("showcaseRed");
 	} else {
 		percentDTPIDTotalDisplay.classList.remove("showcaseRed");
-	}
-}
-
-//logic to make submit button read only or not
-function showSubmit(){
-	if(requestedAmount == summedDTPIDFunds && percentDTPIDTotal <= 35 && hotelRoomNights > 30 && totalRevenue > 5000){
-		document.getElementById("submit").removeAttribute("disabled");
-	}
-	else {
-		document.getElementById("submit")
 	}
 }
 
@@ -319,13 +296,6 @@ function resetAllFinalDTPIDAmounts(){
 	finalDTPIDAmountDisplay.textContent = numberWithCommas(requestedAmount);
 	dtpidFundsAvailableDisplay.textContent = numberWithCommas(requestedAmount);
 	totalDTPIDFundsDisplay.textContent = numberWithCommas(requestedAmount);
-}
-  
-//function to add commas to numbers greater than 999.909  
-function numberWithCommas(x) {
-    var parts = x.toString().split(".");
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    return parts.join(".");
 }
 
 //submit function to open email to send extra documents
