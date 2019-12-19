@@ -180,31 +180,13 @@
  			</table>
  		</div>
 
-	 	<!-- Event Budget Information -->
-		<div>
-			<h3>Event Budget Information:</h3>
-			<p>Please complete the "Total Event Budget" field</p>
-			<table class="table table-bordered form-inline">
-				<tbody>
-					<tr>
-						<td>Total Event Budget</td>
+	 	<% include partials/eventBudgetTopTable.ejs %>
 						<td>
 							<strong>$</strong>
 							<!-- Hotel Post Total Other: -->
 							<input id="00N0b00000CbolR" class="form-control" name="00N0b00000CbolR totEBudget" size="9" type="text" value="0" required/>
 						</td>
-					</tr>
-					<tr>
-						<td>Total DTPID Funds ($35,000 max): </td>
-						<!-- Total DTPID Funds Display -->
-						<td><strong>$</strong><span id="totFDis">0</span></td>
-					</tr>
-					<tr>
-						<td>DTPID as a % of Total (35% max):</td>
-						<td><span id="perFTotDis">0</span><strong>%</strong></td>
-					</tr>
-				</tbody>
-			</table>
+		<% include partials/eventBudgetBottomTable.ejs %>
 
 			<h3>How you spent the DTPID Dollars:</h3>
 			<p>Make sure that "Total DTPID Funds" and "Final Eligible DTPID Amount" are equal. Use all fields that apply.</p>
