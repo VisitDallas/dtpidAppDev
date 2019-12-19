@@ -8,7 +8,6 @@ let estimationChoice1 = document.getElementById("estimationChoice1");
 let estimationChoice2 = document.getElementById("estimationChoice2");
 let estimationChoice3 = document.getElementById("estimationChoice3");
 let estimationResult = document.getElementById("estimationResult");
-let estimationSelected = document.getElementsByClassName("estSel");
 let estimationChoiceFactorDisplay = document.getElementById("estimationChoiceFactorDisplay");
 let estimationChoiceFactor = 0;
 let estimationNumberInputDisplay = document.getElementById("00N0b000007vPGg");
@@ -54,9 +53,9 @@ estimationNumberInputDisplay.addEventListener("change", function(){
 
 function clearEstimationChoice(){
 	estimationChoice0.classList.remove("hide");
-	$(".estSel").each(function() {
-	    $(this).addClass("hide");
-	});
+	estimationChoice1.classList.add("hide");
+	estimationChoice2.classList.add("hide");
+	estimationChoice3.classList.add("hide");
 	estimationChoiceFactor = 0;
 	estimationNumberInput = 0;
 	estimationNumberInputDisplay.value = 0;
