@@ -118,11 +118,11 @@ hotelRoomRateDisplay.addEventListener("change", function(){
 	overPercentage();
 })
 
-totalEventBudgetDisplay.addEventListener("change", function(){
-	doTotalBudgetCalculations();
-	overPercentage();
-	showSubmit();
-})
+// totalEventBudgetDisplay.addEventListener("change", function(){
+// 	doTotalBudgetCalculations();
+// 	overPercentage();
+// 	showSubmit();
+// })
 
 eventMarketingTotalDisplay.addEventListener("change", function(){
 	eventMarketingTotalDisplay.value = parseFloat(eventMarketingTotalDisplay.value.replace(/,/g, ''));

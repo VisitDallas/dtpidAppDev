@@ -1,3 +1,11 @@
+document.getElementById("00N0b00000CbKPj"),addEventListener("change", totalFundingFunctions);
+
+function totalFundingFunctions() {
+	doTotalBudgetCalculations();
+	overPercentage();
+	showSubmit();
+}
+
 function doTotalBudgetCalculations(){
 	let totalEventBudgetDisplay = document.getElementById("00N0b00000CbKPj").value;
 	let totalEventBudget = Number(totalEventBudgetDisplay)	 / 100;
