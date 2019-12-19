@@ -74,34 +74,51 @@
  		</div>
 
  		<!-- Calculate TPID Funding-->
- 		<div class="form-inline">
- 			<h3>Calculated Eligible DTPID Funded Amount Based on Actualized Performance:</h3>
- 			<p>Use the SAME method of computing the actual incremental room night code and fill in the appropriate blank:</p>
- 			<ul>
- 				<li>
- 					<label>Post Event DTPID Estimation Choice:</label>
- 					<!-- Estimation Choice Picker -->
-	 				<select  id="00N0b000009gtNd" name="00N0b000009gtNd" class="form-control estCP" title="Post Event TPID Estimation Choice" required>
-		 				<option value="">None</option>
-		 				<option value="Attendance Numbers">Attendance Numbers</option>
-		 				<option value="Hotel Booking Code">Hotel Booking Code</option>
-						<option value="Ticket Sales/Registration">Ticket Sales/Registration</option>
-					</select>
- 				</li>
+ 		<div>
+			<div>
+				<h3>How to Estimate DTPID Funded Amount:</h3>
+				<p>Select ONE method of computing the anticipated incremental room night code and fill in the appropriate blank:</p>
+			</div>
 
-	 			<!-- Displays for estimation calculations -->
- 				<li id="estimationChoice0">Please pick an estimation Choice.</li>
- 				<li id="estimationChoice1" class="hide">Actual total number of attendees of the event multipled by factor</li>
-				<li id="estimationChoice2" class="hide">Actual number of trackable Hotel room nights through Hotel Booking Codes</li>
-				<li id="estimationChoice3" class="hide">Actual total number of ticket sales sold or registrations from outside of the DFW Metropolitan Statistical Area (MSA) multiplied by factor.</li>
-
-				<li id="estimationCalculation" class="hide">
-					<!-- <label>Post Event DTPID Number Input:</label> -->
-					<input id="00N0b000009gtUX" name="00N0b000009gtUX" class="form-control numIn" size="20" type="text" placeholder="e.g. 12345" />
-					<p class="inLineStart">x <span id="estimationChoiceFactorDisplay">0</span> = <span id="estimationChoiceResultDisplay">0</span> Total Room Nights</p>
-				</li>
-	 		</ul>
- 		</div>
+		<div class="form-horizontal">
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Pre Event DTPID Estimation Choice:</label>
+				<!-- Estimation Choice Picker -->
+				<div class="col-sm-9">
+	 				<select  id="00N0b000009gtNd" name="00N0b000009gtNd" class="form-control estCP" name="00N0b000007v5C5" title="Pre Event TPID Estimation Choice">
+					<option value="">--None--</option>
+					<option value="Attendance Numbers">Attendance Numbers</option>
+					<option value="Hotel Booking Code">Hotel Booking Code</option>
+					<option value="Ticket Sales/Registration">Ticket Sales / Registration</option>
+				</select>
+				</div>
+			</div>
+		</div>
+			
+			<div class="form-group">
+				<div class="col-sm-1">
+				
+				</div>
+				<div class="col-sm-11">
+				<ul>
+					<li id="estimationChoice0">Please Choose an option</li>
+					<li id="estimationChoice1" class="hide">Estimated total number of attendees of the event multiplied by factor.</li>
+					<li id="estimationChoice2" class="hide">Estimated number of trackable hotel room nights through hotel booking codes.</li>
+					<li id="estimationChoice3" class="hide">Estimated total number of ticket sales sold or registartions from outside of the DFW Metropolitan Statistical Area (MSA) multiplied by factor.</li>					
+					<li id="estimationResult" class="hide">
+						<!-- Pre Event DTPID Number Input: -->
+						<div class="col-sm-2 noPaddingRight">
+					<input id="00N0b000009gtUX" name="00N0b000009gtUX" class="form-control numIn" size="20" type="text" placeholder="e.g. 12345" required/>
+						</div>
+						<div class="col-sm-10 noPaddingLeft">
+							<p  class="inLine"> x <span id="estimationChoiceFactorDisplay">0</span> = <span id="estimationChoiceResultDisplay">0</span> Total Room Nights</p>	
+						</div>
+					</li>
+				</ul>				
+				</div>
+			</div>
+		</div>
+		</div>	
 
  		<div>
  			<h3>Let's do the Math:</h3>
