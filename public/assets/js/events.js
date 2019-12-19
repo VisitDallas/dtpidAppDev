@@ -19,6 +19,9 @@ let estimationChoiceResult = 0;
 let partialPaymentMath = .25;
 let partialRequestedAmount = document.getElementById("00N0b00000899kp");
 let finalRequestedAmount = document.getElementById("00N0b00000Cbqrv");
+let matchDTPIDFunds1 = document.getElementById("matchDTPIDFunds1");
+let matchDTPIDFunds2 = document.getElementById("matchDTPIDFunds2");
+let totalDTPIDFundsDisplay = document.getElementById("totFDis");
 
 
 estimationChoicePicker.addEventListener("change", function(){
