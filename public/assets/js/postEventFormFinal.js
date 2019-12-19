@@ -88,11 +88,11 @@ lessAnyPaymentsDisplay.addEventListener("change", function(){
 	doLessPaymentsCalculations();
 });
 
-totalEventBudgetDisplay.addEventListener("change", function(){
-	doTotalBudgetCalculations();
-	overPercentage();
-	showSubmit();
-});
+// totalEventBudgetDisplay.addEventListener("change", function(){
+// 	doTotalBudgetCalculations();
+// 	overPercentage();
+// 	showSubmit();
+// });
 
 //event sums fields are assigned values and then calculated
 $(".eventSum").change(function(){
@@ -263,7 +263,7 @@ function checkIfOverMax(){
 //adding statement from check if over max
 function fillInFinalDTPIDFields(var1){
 	finalDTPIDAmountDisplay.textContent = numberWithCommas(var1);
-	totalDTPIDFundsDisplay.textContent = numberWithCommas(var1);
+	totalEventBudgetDisplay.textContent = numberWithCommas(var1);
 	matchDTPIDFunds2.textContent = numberWithCommas(var1);
 	dtpidFundsAvailableDisplay.textContent = numberWithCommas(var1);
 }
@@ -272,7 +272,7 @@ function fillInFinalDTPIDFields(var1){
 function setFundsDisplayNumbers(num){
 	requestedAmountDisplay.value = numberWithCommas(num);
 	dtpidFundsAvailableDisplay.textContent = numberWithCommas(num);
-	totalDTPIDFundsDisplay.textContent = numberWithCommas(num);
+	totalEventBudgetDisplay.textContent = numberWithCommas(num);
 	matchDTPIDFunds2.textContent = numberWithCommas(num);
 }
 
@@ -285,7 +285,7 @@ function setFundsDisplayNumbers(num){
 function resetAllFinalDTPIDAmounts(){
 	finalDTPIDAmountDisplay.textContent = numberWithCommas(requestedAmount);
 	dtpidFundsAvailableDisplay.textContent = numberWithCommas(requestedAmount);
-	totalDTPIDFundsDisplay.textContent = numberWithCommas(requestedAmount);
+	totalEventBudgetDisplay.textContent = numberWithCommas(requestedAmount);
 }
 
 //submit function to open email to send extra documents
