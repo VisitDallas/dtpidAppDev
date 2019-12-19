@@ -13,11 +13,11 @@ function doTotalBudgetCalculations(){
 	let totalEventBudget = Number(totalEventBudgetDisplay)	 / 100;
 	percentDTPIDFundsTotal = Math.floor(requestedAmount / totalEventBudget);
 	document.getElementById("percentDTPIDFundsTotalDisplay").textContent = percentDTPIDFundsTotal;
-	totalEventBudgetDisplay.value.toLocaleString();
+	numberWithCommas(totalEventBudgetDisplay.value);
 }
 
 function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return x.toLocaleString();
 }
 
 function showSubmit(){
