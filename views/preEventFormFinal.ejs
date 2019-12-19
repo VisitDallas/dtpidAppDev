@@ -337,35 +337,13 @@
 			<br>
 		</div>
 
-		<!-- Event Budget Section -->
-		<div>
-			<h3>Event Budget:</h3>
-			<table class="table table-bordered form-group form-inline">
-				<thead>
-					<th colspan="2">Total Event Budget</th>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Total Event Budget</td>
+		<% include partials/eventBudgetTopTable.ejs %>
 						<td>
 							<!-- Total Event Budget: -->
 							<label class="inLine">$</label>
 							<input id="00N0b00000CbKPj" class="form-control totEBudget" name="00N0b00000CbKPj" size="20" type="text" value="0" />
 						</td>
-					</tr>
-					<tr>
-						<td>Total DTPID Funds ($35,000 Max)</td>
-						<!-- Total DTPID Funds Display -->
-						<td><label>$</label><span id="totFDis">0</span></td>
-					</tr>
-					<tr>
-						<td>DTPID as a % of Total (35% max):</td>
-						<!-- Percent DTPID Funds Total Display -->
-						<td><span id="perFTotDis">0</span><label>%</label></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
+		<% include partials/eventBudgetBottomTable.ejs %>
 
 		<!-- How you spent the money section -->
 		<div>

@@ -216,15 +216,6 @@ function matchTotals(){
 	}
 }
 
-//logic to show red if percentage is not correct
-// function overPercentage(){
-// 	if (percentDTPIDTotal > 35){
-// 		percentDTPIDTotalDisplay.classList.add("showcaseRed");
-// 	} else {
-// 		percentDTPIDTotalDisplay.classList.remove("showcaseRed");
-// 	}
-// }
-
 //adding format to the phone and mobile fields
 $(".phone").change(function(){
 	if(this.id == "phone"){
