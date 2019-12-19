@@ -22,7 +22,7 @@ let finalRequestedAmount = document.getElementById("00N0b00000Cbqrv");
 let matchDTPIDFunds1 = document.getElementById("matchDTPIDFunds1");
 let matchDTPIDFunds2 = document.getElementById("matchDTPIDFunds2");
 let totalDTPIDFundsDisplay = document.getElementById("totFDis");
-
+var submitButton = document.getElementById("submit");
 
 estimationChoicePicker.addEventListener("change", function(){
 	if (estimationChoicePicker.selectedIndex === 1){
