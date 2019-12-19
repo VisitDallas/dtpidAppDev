@@ -19,7 +19,7 @@ function doTotalBudgetCalculations(){
 
 //logic to show red if percentage is not correct
 function overPercentage(){
-	if (percentDTPIDTotal > 35){
+	if (percentDTPIDFundsTotal > 35){
 		percentDTPIDTotalDisplay.classList.add("showcaseRed");
 	} else {
 		percentDTPIDTotalDisplay.classList.remove("showcaseRed");
