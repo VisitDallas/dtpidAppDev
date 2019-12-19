@@ -13,7 +13,7 @@ function doTotalBudgetCalculations(){
 	let totalEventBudget = Number(parseFloat(totalEventBudgetDisplay.value.replace(/,/g, ''))) / 100;
 	percentDTPIDFundsTotal = Math.floor(requestedAmount / totalEventBudget);
 	document.getElementById("percentDTPIDFundsTotalDisplay").textContent = percentDTPIDFundsTotal;
-	numberWithCommas(totalEventBudgetDisplay);
+	Number(totalEventBudgetDisplay.value).toLocaleString();
 }
 
 function showSubmit(){
