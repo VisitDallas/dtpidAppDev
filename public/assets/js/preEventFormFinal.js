@@ -2,17 +2,7 @@ var statePicklistDisplay = document.getElementById("statePicklist");
 var statePicklistValue = "Texas";
 var state = document.getElementById("state");
 // var estimationSelection = document.getElementById("00N0b000007v5C5");
-// var estimationChoice0 = document.getElementById("estimationChoice0");
-// var estimationChoice1 = document.getElementById("estimationChoice1");
-// var estimationChoice2 = document.getElementById("estimationChoice2");
-// var estimationChoice3 = document.getElementById("estimationChoice3");
-// var estimationResult = document.getElementById("estimationResult");
-// var estimationChoiceFactorDisplay = document.getElementById("estimationChoiceFactorDisplay");
-// var estimationChoiceFactor = 0;
 // var estimationNumberInputDisplay = document.getElementById("00N0b000007vPGg");
-// var estimationNumberInput = 0;
-// var estimationChoiceResultDisplay = document.getElementById("estimationChoiceResultDisplay");
-// var estimationChoiceResult = 0;
 var hotelRoomNightsDisplay = document.getElementById("00N0b000009got7");
 var hotelRoomNights = 0;
 var hotelRoomRateDisplay = document.getElementById("00N0b000009gotC");
@@ -70,42 +60,6 @@ statePicklistDisplay.addEventListener("change", function(){
 		eventLocationStateDisplay.value = statePicklistValue;
 	}
 })
-
-// estimationSelection.addEventListener("change", function(){
-// 	if (estimationSelection.selectedIndex === 1){
-// 		clearEstimationChoice();
-// 		estimationChoice1.classList.remove("hide");
-// 		estimationChoiceFactor = 0.09;
-// 		showEstimationChoice();
-// 		doEstimationCalculations();
-// 	} else if (estimationSelection.selectedIndex === 2){
-// 		clearEstimationChoice();
-// 		estimationChoice2.classList.remove("hide");
-// 		estimationChoiceFactor = 1.0;
-// 		showEstimationChoice();
-// 		hotelRoomRateDisplay.readOnly = false;
-// 		doEstimationCalculations();
-// 	} else if (estimationSelection.selectedIndex === 3){
-// 		clearEstimationChoice();
-// 		estimationChoice3.classList.remove("hide");
-// 		estimationChoiceFactor = 0.6;
-// 		showEstimationChoice();
-// 		doEstimationCalculations();
-// 	} else{
-// 		clearEstimationChoice();
-// 	}
-// });
-
-// estimationNumberInputDisplay.addEventListener("change", function(){
-// 	estimationNumberInputDisplay.value = parseFloat(estimationNumberInputDisplay.value.replace(/,/g, ''));
-// 	estimationNumberInput = Number(estimationNumberInputDisplay.value);
-// 	doEstimationCalculations();
-// 	matchTotals();
-// 	showSubmit();
-// 	doTotalBudgetCalculations();
-// 	overPercentage();
-// 	estimationNumberInputDisplay.value = numberWithCommas(estimationNumberInput);
-// });
 
 hotelRoomRateDisplay.addEventListener("change", function(){
 	hotelRoomRate = Number(hotelRoomRateDisplay.value);
@@ -238,44 +192,6 @@ $(".phone").change(function(){
 		mobileDisplay.value = formatPhoneNumber(this.value);
 	}
 });
-
-// function clearEstimationChoice(){
-// 	estimationChoice0.classList.remove("hide");
-// 	estimationChoice1.classList.add("hide");
-// 	estimationChoice2.classList.add("hide");
-// 	estimationChoice3.classList.add("hide");
-// 	estimationResult.classList.add("hide");
-// 	estimationChoiceFactor = 0;
-// 	estimationNumberInput = 0;
-// 	estimationNumberInputDisplay.value = 0;
-// 	hotelRoomRate = 168;
-// 	doEstimationCalculations();
-// 	hotelRoomRateDisplay.value = hotelRoomRate;
-// 	hotelRoomRateDisplay.readOnly = true;
-// 	requestedAmount = 0;
-// }
-
-// function showEstimationChoice(){
-// 	estimationChoice0.classList.add("hide");
-// 	estimationResult.classList.remove("hide");
-// 	estimationChoiceFactorDisplay.textContent = estimationChoiceFactor;
-// }
-
-// function doEstimationCalculations(){
-// 	estimationChoiceResult = Math.round(estimationNumberInput * estimationChoiceFactor * 1)/1;
-// 	estimationChoiceResultDisplay.textContent = numberWithCommas(estimationChoiceResult);
-// 	hotelRoomNights = Number(estimationChoiceResult);
-// 	hotelRoomNightsDisplay.value = numberWithCommas(estimationChoiceResult);
-// 	totalRevenue = Math.round(estimationChoiceResult * hotelRoomRate * 1e12) / 1e12;
-// 	totalRevenueDisplay.textContent = numberWithCommas(totalRevenue);
-// 	finalDTPIDAmount = Math.floor(totalRevenue / 10);
-// 	checkIfOverMax();
-// 	setRequestedAmount();
-// 	partialCalculator();
-// 	finalDTPIDAmountDisplay.textContent = numberWithCommas(finalDTPIDAmount);
-// 	totalDTPIDFundsDisplay.textContent = numberWithCommas(requestedAmount);
-// 	matchDTPIDFunds2.textContent = numberWithCommas(requestedAmount);	
-// }
 
 function setRequestedAmount(){
 	requestedAmount = finalDTPIDAmount;
