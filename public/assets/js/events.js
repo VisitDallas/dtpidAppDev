@@ -16,6 +16,8 @@ let estimationNumberInput = 0;
 let estimationChoiceResultDisplay = document.getElementById("estimationChoiceResultDisplay");
 let estimationChoiceResult = 0;
 
+let partialPaymentMath = .25;
+
 estimationChoicePicker.addEventListener("change", function(){
 	if (estimationChoicePicker.selectedIndex === 1){
 		clearEstimationChoice();
@@ -102,7 +104,7 @@ function totalFundingFunctions() {
 
 function partialCalculator(){
 	//calculate the partial payment
-	var partialRequestedAmount1 = partialPaymentMath * requestedAmount;
+	let partialRequestedAmount1 = partialPaymentMath * requestedAmount;
 	partialRequestedAmount.value = partialPaymentMath * requestedAmount;
 	//calculate the final payment
 	finalRequestedAmount.value = requestedAmount - partialRequestedAmount1;
