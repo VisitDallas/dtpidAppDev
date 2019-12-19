@@ -346,15 +346,6 @@ function overPercentage(){
 	}
 }
 
-function showSubmit(){
-	if(requestedAmount == summedDTPIDFunds && percentDTPIDFundsTotal <= 35 && hotelRoomNights > 30 && totalRevenue > 5000){
-		submitButton.removeAttribute("disabled");
-	}
-	else {
-		submitButton.setAttribute("disabled", "true");
-	}
-}
-
 $("#locationCheck").click(function(){
 	$("#eventVenueLocationDisplayFields").toggleClass("hide");
     if($(this).is(":checked")){      
