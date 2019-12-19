@@ -10,10 +10,10 @@ function totalFundingFunctions() {
 }
 
 function doTotalBudgetCalculations(){
-	let totalEventBudget = Number(parseFloat(totalEventBudgetDisplay.value.replace(/,/g, ''))) / 100;
-	percentDTPIDFundsTotal = Math.floor(requestedAmount / totalEventBudget);
+	let totalEventBudget = Number(parseFloat(totalEventBudgetDisplay.value.replace(/,/g, '')));
+	percentDTPIDFundsTotal = Math.floor(requestedAmount / (totalEventBudget/100));
 	document.getElementById("percentDTPIDFundsTotalDisplay").textContent = percentDTPIDFundsTotal;
-	Number(totalEventBudgetDisplay.value).toLocaleString();
+	totalEventBudgetDisplay.value = numberWithCommas(totalEventBudget);
 }
 
 function showSubmit(){
