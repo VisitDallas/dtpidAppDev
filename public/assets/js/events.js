@@ -1,5 +1,6 @@
 let percentDTPIDFundsTotal = 0;
 let totalEventBudgetDisplay = document.getElementsByClassName("totEBudget").item(0);
+let percentDTPIDTotalDisplay = document.getElementById("perFTotDis");
 
 totalEventBudgetDisplay,addEventListener("change", totalFundingFunctions);
 
@@ -12,11 +13,17 @@ function totalFundingFunctions() {
 function doTotalBudgetCalculations(){
 	let totalEventBudget = Number(parseFloat(totalEventBudgetDisplay.value.replace(/,/g, '')));
 	percentDTPIDFundsTotal = Math.floor(requestedAmount / (totalEventBudget/100));
-	document.getElementById("perFTotDis").textContent = percentDTPIDFundsTotal;
-	if (percentDTPIDFundsTotal > 35){
-		document.getElementById("perFTotDis").classList.toggle("showcaseRed");
-	}
+	percentDTPIDTotalDisplay.textContent = percentDTPIDFundsTotal;
 	totalEventBudgetDisplay.value = numberWithCommas(totalEventBudget);
+}
+
+//logic to show red if percentage is not correct
+function overPercentage(){
+	if (percentDTPIDTotal > 35){
+		percentDTPIDTotalDisplay.classList.add("showcaseRed");
+	} else {
+		percentDTPIDTotalDisplay.classList.remove("showcaseRed");
+	}
 }
 
 //function to add commas to numbers
@@ -33,3 +40,4 @@ function showSubmit(){
 		submitButton.setAttribute("disabled", "true");
 	}
 }
+
