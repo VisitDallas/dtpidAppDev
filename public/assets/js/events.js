@@ -54,7 +54,9 @@ estimationNumberInputDisplay.addEventListener("change", function(){
 
 function clearEstimationChoice(){
 	estimationChoice0.classList.remove("hide");
-	estimationSelected.className += "hide";
+	for (var i = 0; i < estimationSelected.length; i++) {
+		estimationSelected[i].classList.add("hide");
+	}
 	estimationChoiceFactor = 0;
 	estimationNumberInput = 0;
 	estimationNumberInputDisplay.value = 0;
