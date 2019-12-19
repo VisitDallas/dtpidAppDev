@@ -13,7 +13,15 @@ function doTotalBudgetCalculations(){
 	let totalEventBudget = Number(parseFloat(totalEventBudgetDisplay.value.replace(/,/g, '')));
 	percentDTPIDFundsTotal = Math.floor(requestedAmount / (totalEventBudget/100));
 	document.getElementById("perFTotDis").textContent = percentDTPIDFundsTotal;
+	if (percentDTPIDFundsTotal > 35){
+		document.getElementById("perFTotDis").classList.toggle("showcaseRed");
+	}
 	totalEventBudgetDisplay.value = numberWithCommas(totalEventBudget);
+}
+
+//function to add commas to numbers
+function numberWithCommas(x) {
+    return x.toLocaleString();
 }
 
 //logic to make submit button read only or not

@@ -23,7 +23,6 @@ var lessAnyPaymentsDisplay = document.getElementById("00N0b00000899kp");
 var lessAnyPayments = 0;
 var finalPaymentDueDisplay = document.getElementById("00N0b00000Cbqrv");
 var finalPaymentDue = 0;
-var totalDTPIDFundsDisplay = document.getElementById("totalDTPIDFundsDisplay");
 var eventMarketingTotal = 0;
 var eventStaffingTotal = 0;
 var eventProductionTotal = 0;
@@ -218,13 +217,13 @@ function matchTotals(){
 }
 
 //logic to show red if percentage is not correct
-function overPercentage(){
-	if (percentDTPIDTotal > 35){
-		percentDTPIDTotalDisplay.classList.add("showcaseRed");
-	} else {
-		percentDTPIDTotalDisplay.classList.remove("showcaseRed");
-	}
-}
+// function overPercentage(){
+// 	if (percentDTPIDTotal > 35){
+// 		percentDTPIDTotalDisplay.classList.add("showcaseRed");
+// 	} else {
+// 		percentDTPIDTotalDisplay.classList.remove("showcaseRed");
+// 	}
+// }
 
 //adding format to the phone and mobile fields
 $(".phone").change(function(){

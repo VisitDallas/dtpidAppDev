@@ -282,15 +282,6 @@ function setRequestedAmount(){
 	requestedAmountDisplay.value = numberWithCommas(requestedAmount);
 }
 
-// function doTotalBudgetCalculations(){
-// 	totalEventBudgetDisplay.value = parseFloat(totalEventBudgetDisplay.value.replace(/,/g, ''));
-// 	var totalEventBudgetDisplay2 = totalEventBudgetDisplay.value;
-// 	totalEventBudget = Number(totalEventBudgetDisplay.value) / 100;
-// 	percentDTPIDFundsTotal = Math.floor(requestedAmount / totalEventBudget);
-// 	percentDTPIDFundsTotalDisplay.textContent = percentDTPIDFundsTotal;
-// 	totalEventBudgetDisplay.value = numberWithCommas(totalEventBudgetDisplay2);
-// }
-
 function addDTPIDFundingCategories(){
 	summedDTPIDFunds = eventMarketingTotal + eventStaffingTotal + eventProductionTotal + eventOtherTotal;
 	summedDTPIDFundsDisplay.textContent = numberWithCommas(summedDTPIDFunds);
@@ -325,14 +316,6 @@ function matchTotals(){
 	} else {
 		summedDTPIDFundsDisplay.classList.remove("showcaseRed");
 		matchDTPIDFunds1.classList.add("hide");
-	}
-}
-
-function overPercentage(){
-	if (percentDTPIDFundsTotal > 35){
-		percentDTPIDFundsTotalDisplay.classList.add("showcaseRed");
-	} else {
-		percentDTPIDFundsTotalDisplay.classList.remove("showcaseRed");
 	}
 }
 
@@ -405,11 +388,6 @@ $(document).ready(function () {
         minDate: 90
     });
 });
-
-//function to add commas to numbers
-function numberWithCommas(x) {
-    return x.toLocaleString();
-}
 
 function inputCurrentDate(){ 
 	var d = new Date();
