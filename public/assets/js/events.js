@@ -100,6 +100,14 @@ function totalFundingFunctions() {
 	showSubmit();
 }
 
+function partialCalculator(){
+	//calculate the partial payment
+	var partialRequestedAmount1 = partialPaymentMath * requestedAmount;
+	partialRequestedAmount.value = partialPaymentMath * requestedAmount;
+	//calculate the final payment
+	finalRequestedAmount.value = requestedAmount - partialRequestedAmount1;
+}
+
 function doTotalBudgetCalculations(){
 	let totalEventBudget = Number(parseFloat(totalEventBudgetDisplay.value.replace(/,/g, '')));
 	percentDTPIDFundsTotal = Math.floor(requestedAmount / (totalEventBudget/100));
@@ -119,6 +127,15 @@ function overPercentage(){
 //function to add commas to numbers
 function numberWithCommas(x) {
     return x.toLocaleString();
+}
+
+function formatPhoneNumber(phoneNumberString) {
+	var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
+	var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
+	if (match) {
+		return '(' + match[1] + ') ' + match[2] + '-' + match[3]
+	}
+	return phoneNumberString;
 }
 
 //logic to make submit button read only or not

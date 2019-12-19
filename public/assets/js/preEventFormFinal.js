@@ -254,22 +254,22 @@ function resetVenueDisplays(){
 	eventLocationStateDisplay.value = statePicklistValue;
 }
 
-function partialCalculator(){
-	//calculate the partial payment
-	var partialRequestedAmount1 = partialPaymentMath * requestedAmount;
-	partialRequestedAmount.value = partialPaymentMath * requestedAmount;
-	//calculate the final payment
-	finalRequestedAmount.value = requestedAmount - partialRequestedAmount1;
-}
+// function partialCalculator(){
+// 	//calculate the partial payment
+// 	var partialRequestedAmount1 = partialPaymentMath * requestedAmount;
+// 	partialRequestedAmount.value = partialPaymentMath * requestedAmount;
+// 	//calculate the final payment
+// 	finalRequestedAmount.value = requestedAmount - partialRequestedAmount1;
+// }
 
-function formatPhoneNumber(phoneNumberString) {
-	var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
-	var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
-	if (match) {
-		return '(' + match[1] + ') ' + match[2] + '-' + match[3]
-	}
-	return phoneNumberString;
-}
+// function formatPhoneNumber(phoneNumberString) {
+// 	var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
+// 	var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
+// 	if (match) {
+// 		return '(' + match[1] + ') ' + match[2] + '-' + match[3]
+// 	}
+// 	return phoneNumberString;
+// }
 
 $(document).ready(function () {
     $("#00N0b000007v1mP").datepicker({
