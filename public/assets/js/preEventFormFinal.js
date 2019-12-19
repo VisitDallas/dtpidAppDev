@@ -406,6 +406,11 @@ $(document).ready(function () {
     });
 });
 
+//function to add commas to numbers
+function numberWithCommas(x) {
+    return x.toLocaleString();
+}
+
 function inputCurrentDate(){ 
 	var d = new Date();
 	var month = d.getMonth()+1;

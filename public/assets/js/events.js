@@ -16,11 +16,6 @@ function doTotalBudgetCalculations(){
 	totalEventBudgetDisplay.value = numberWithCommas(totalEventBudget);
 }
 
-//function to add commas to numbers
-function numberWithCommas(x) {
-    return x.toLocaleString();
-}
-
 //logic to make submit button read only or not
 function showSubmit(){
 	if(requestedAmount == summedDTPIDFunds && percentDTPIDFundsTotal <= 35 && hotelRoomNights > 30 && totalRevenue > 5000){

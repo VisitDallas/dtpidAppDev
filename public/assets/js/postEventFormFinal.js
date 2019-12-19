@@ -305,6 +305,11 @@ function myFunction() {
 	window.location.href='mailto:'+email+'?subject='+subject;
 }
 
+//function to add commas to numbers
+function numberWithCommas(x) {
+    return x.toLocaleString();
+}
+
 //adds "()" and "-" to phone numbers
 function formatPhoneNumber(phoneNumberString) {
 	var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
