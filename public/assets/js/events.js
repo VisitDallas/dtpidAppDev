@@ -54,9 +54,9 @@ estimationNumberInputDisplay.addEventListener("change", function(){
 
 function clearEstimationChoice(){
 	estimationChoice0.classList.remove("hide");
-	for (var i = 0; i < estimationSelected.length; i++) {
-		estimationSelected[i].className += "hide";
-	}
+	$(".estSel").each(function() {
+	    $(this).addClass("hide");
+	});
 	estimationChoiceFactor = 0;
 	estimationNumberInput = 0;
 	estimationNumberInputDisplay.value = 0;
@@ -66,6 +66,8 @@ function clearEstimationChoice(){
 	hotelRoomRateDisplay.readOnly = true;
 	requestedAmount = 0;
 }
+
+
 
 function showEstimationChoice(){
 	estimationChoice0.classList.add("hide");
