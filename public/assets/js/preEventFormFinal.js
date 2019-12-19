@@ -47,9 +47,9 @@ var requestedAmountDisplay = document.getElementById("00N0b00000BQW8Z");
 var requestedAmount = 0;
 var currentDate = document.getElementById("00N0b00000CclxK");
 var partialPaymentPercentage = document.getElementById("00N0b00000899QC");
-var partialPaymentMath = .25;
-var partialRequestedAmount = document.getElementById("00N0b00000899kp");
-var finalRequestedAmount = document.getElementById("00N0b00000Cbqrv");
+// var partialPaymentMath = .25;
+//var partialRequestedAmount = document.getElementById("00N0b00000899kp");
+// var finalRequestedAmount = document.getElementById("00N0b00000Cbqrv");
 
 statePicklistDisplay.addEventListener("change", function(){
 	statePicklistValue = statePicklistDisplay.value;
