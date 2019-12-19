@@ -17,7 +17,9 @@ let estimationChoiceResultDisplay = document.getElementById("estimationChoiceRes
 let estimationChoiceResult = 0;
 
 let partialPaymentMath = .25;
-var partialRequestedAmount = document.getElementById("00N0b00000899kp");
+let partialRequestedAmount = document.getElementById("00N0b00000899kp");
+let finalRequestedAmount = document.getElementById("00N0b00000Cbqrv");
+
 
 estimationChoicePicker.addEventListener("change", function(){
 	if (estimationChoicePicker.selectedIndex === 1){
