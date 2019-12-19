@@ -9,8 +9,8 @@ function totalFundingFunctions() {
 }
 
 function doTotalBudgetCalculations(){
-	let totalEventBudgetDisplay = document.getElementById("00N0b00000CbKPj").value;
-	let totalEventBudget = Number(totalEventBudgetDisplay)	 / 100;
+	let totalEventBudgetDisplay = Number(document.getElementById("00N0b00000CbKPj").value);
+	let totalEventBudget = totalEventBudgetDisplay / 100;
 	percentDTPIDFundsTotal = Math.floor(requestedAmount / totalEventBudget);
 	document.getElementById("percentDTPIDFundsTotalDisplay").textContent = percentDTPIDFundsTotal;
 	numberWithCommas(totalEventBudgetDisplay.value);
