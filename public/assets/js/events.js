@@ -1,4 +1,5 @@
 let percentDTPIDFundsTotal = 0;
+let totalEventBudgetDisplay = 0;
 
 document.getElementById("00N0b00000CbKPj"),addEventListener("change", totalFundingFunctions);
 
@@ -9,15 +10,11 @@ function totalFundingFunctions() {
 }
 
 function doTotalBudgetCalculations(){
-	let totalEventBudgetDisplay.value = Number(parseFloat(document.getElementById("00N0b00000CbKPj").value.replace(/,/g, '')));
+	totalEventBudgetDisplay = Number(parseFloat(document.getElementById("00N0b00000CbKPj").value.replace(/,/g, '')));
 	let totalEventBudget = totalEventBudgetDisplay / 100;
 	percentDTPIDFundsTotal = Math.floor(requestedAmount / totalEventBudget);
 	document.getElementById("percentDTPIDFundsTotalDisplay").textContent = percentDTPIDFundsTotal;
 	totalEventBudgetDisplay.toLocaleString();
-}
-
-function numberWithCommas(x) {
-    return x.toLocaleString();
 }
 
 function showSubmit(){

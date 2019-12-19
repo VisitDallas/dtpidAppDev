@@ -416,6 +416,10 @@ $(document).ready(function () {
     });
 });
 
+function numberWithCommas(x) {
+    return x.toLocaleString();
+}
+
 function inputCurrentDate(){ 
 	var d = new Date();
 	var month = d.getMonth()+1;
