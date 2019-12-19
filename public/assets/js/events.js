@@ -2,7 +2,8 @@ let percentDTPIDFundsTotal = 0;
 let totalEventBudgetDisplay = document.getElementsByClassName("totEBudget").item(0);
 let percentDTPIDTotalDisplay = document.getElementById("perFTotDis");
 
-let estimationSelection = document.getElementById("00N0b000007v5C5");
+//let estimationSelection = document.getElementById("00N0b000007v5C5");
+let estimationChoicePicker = document.getElementsByClassName("estCP").item(0);
 let estimationChoice0 = document.getElementById("estimationChoice0");
 let estimationChoice1 = document.getElementById("estimationChoice1");
 let estimationChoice2 = document.getElementById("estimationChoice2");
@@ -15,21 +16,21 @@ let estimationNumberInput = 0;
 let estimationChoiceResultDisplay = document.getElementById("estimationChoiceResultDisplay");
 let estimationChoiceResult = 0;
 
-estimationSelection.addEventListener("change", function(){
-	if (estimationSelection.selectedIndex === 1){
+estimationChoicePicker.addEventListener("change", function(){
+	if (estimationChoicePicker.selectedIndex === 1){
 		clearEstimationChoice();
 		estimationChoice1.classList.remove("hide");
 		estimationChoiceFactor = 0.09;
 		showEstimationChoice();
 		doEstimationCalculations();
-	} else if (estimationSelection.selectedIndex === 2){
+	} else if (estimationChoicePicker.selectedIndex === 2){
 		clearEstimationChoice();
 		estimationChoice2.classList.remove("hide");
 		estimationChoiceFactor = 1.0;
 		showEstimationChoice();
 		hotelRoomRateDisplay.readOnly = false;
 		doEstimationCalculations();
-	} else if (estimationSelection.selectedIndex === 3){
+	} else if (estimationChoicePicker.selectedIndex === 3){
 		clearEstimationChoice();
 		estimationChoice3.classList.remove("hide");
 		estimationChoiceFactor = 0.6;
@@ -56,6 +57,7 @@ function clearEstimationChoice(){
 	estimationChoice1.classList.add("hide");
 	estimationChoice2.classList.add("hide");
 	estimationChoice3.classList.add("hide");
+	estimationResult.classList.add("hide");
 	estimationChoiceFactor = 0;
 	estimationNumberInput = 0;
 	estimationNumberInputDisplay.value = 0;
