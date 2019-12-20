@@ -33,6 +33,7 @@ app.get("*", function(req, res){
     res.render("devhome");
 });
 
+//send to localhost:3000
 app.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
   });
