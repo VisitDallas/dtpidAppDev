@@ -4,10 +4,8 @@ let percentDTPIDTotalDisplay = document.getElementById("perFTotDis");
 
 //let estimationSelection = document.getElementById("00N0b000007v5C5");
 let estimationChoicePicker = document.getElementsByClassName("estCP").item(0);
+let estimationChoiceDisplay = document.getElementsByClassName("estChoiceDisplay");
 let estimationChoice0 = document.getElementById("estimationChoice0");
-let estimationChoice1 = document.getElementById("estimationChoice1");
-let estimationChoice2 = document.getElementById("estimationChoice2");
-let estimationChoice3 = document.getElementById("estimationChoice3");
 let estimationResult = document.getElementById("estimationResult");
 let estimationChoiceFactorDisplay = document.getElementById("estimationChoiceFactorDisplay");
 let estimationChoiceFactor = 0;
@@ -22,32 +20,48 @@ let finalRequestedAmount = document.getElementById("00N0b00000Cbqrv");
 let matchDTPIDFunds1 = document.getElementById("matchDTPIDFunds1");
 let matchDTPIDFunds2 = document.getElementById("matchDTPIDFunds2");
 let totalDTPIDFundsDisplay = document.getElementById("totFDis");
-var submitButton = document.getElementById("submit");
+let submitButton = document.getElementById("submit");
 
+//based on what is selected for estimation choice, setting appropriate values
 estimationChoicePicker.addEventListener("change", function(){
 	if (estimationChoicePicker.selectedIndex === 1){
-		clearEstimationChoice();
-		estimationChoice1.classList.remove("hide");
-		estimationChoiceFactor = 0.09;
-		showEstimationChoice();
-		doEstimationCalculations();
+		setEstimationAmounts(0.09, 1);
 	} else if (estimationChoicePicker.selectedIndex === 2){
-		clearEstimationChoice();
-		estimationChoice2.classList.remove("hide");
-		estimationChoiceFactor = 1.0;
-		showEstimationChoice();
+		setEstimationAmounts(1.0, 2);
 		hotelRoomRateDisplay.readOnly = false;
-		doEstimationCalculations();
-	} else if (estimationChoicePicker.selectedIndex === 3){
-		clearEstimationChoice();
-		estimationChoice3.classList.remove("hide");
-		estimationChoiceFactor = 0.6;
-		showEstimationChoice();
-		doEstimationCalculations();
+	} else if (estimationChoicePicker.selectedIndex === 3) {
+		setEstimationAmounts(0.6, 3);
 	} else{
 		clearEstimationChoice();
 	}
 });
+
+//do math and show proper value based on estimation factor and index of item
+function setEstimationAmounts(factor, index) {
+	//reseting math
+	clearEstimationChoice();
+	//showing appropriate explanation and factor value
+	estimationChoiceDisplay.item(index).classList.remove("hide");
+	estimationChoiceFactor = factor;
+	//showing factor and total room nights
+	showEstimationChoice();
+	//doing math
+	doEstimationCalculations();
+}
+
+//reseting all values to givens
+function setDefaultChoices() {
+	estimationChoice0.classList.remove("hide");
+	//hiding all estimation explanations
+	for (i = 1; i < estimationChoiceDisplay.length; i++) {
+		estimationChoiceDisplay.item(i).classList.add("hide");
+	}
+	estimationResult.classList.add("hide");
+	//reseting values to default
+	estimationChoiceFactor = estimationNumberInput = 0;
+	estimationNumberInputDisplay.value = 0;
+	hotelRoomRate = 168;
+}
 
 estimationNumberInputDisplay.addEventListener("change", function(){
 	estimationNumberInputDisplay.value = parseFloat(estimationNumberInputDisplay.value.replace(/,/g, ''));
@@ -67,20 +81,6 @@ function clearEstimationChoice(){
 	hotelRoomRateDisplay.readOnly = true;
 	requestedAmount = 0;
 }
-
-function setDefaultChoices() {
-	estimationChoice0.classList.remove("hide");
-	estimationChoice1.classList.add("hide");
-	estimationChoice2.classList.add("hide");
-	estimationChoice3.classList.add("hide");
-	estimationResult.classList.add("hide");
-	estimationChoiceFactor = 0;
-	estimationNumberInput = 0;
-	estimationNumberInputDisplay.value = 0;
-	hotelRoomRate = 168;
-}
-
-
 
 function showEstimationChoice(){
 	estimationChoice0.classList.add("hide");
