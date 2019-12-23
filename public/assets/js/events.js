@@ -61,6 +61,14 @@ estimationNumberInputDisplay.addEventListener("change", function(){
 });
 
 function clearEstimationChoice(){
+	setDefaultChoices();
+	doEstimationCalculations();
+	hotelRoomRateDisplay.value = hotelRoomRate;
+	hotelRoomRateDisplay.readOnly = true;
+	requestedAmount = 0;
+}
+
+function setDefaultChoices() {
 	estimationChoice0.classList.remove("hide");
 	estimationChoice1.classList.add("hide");
 	estimationChoice2.classList.add("hide");
@@ -70,10 +78,6 @@ function clearEstimationChoice(){
 	estimationNumberInput = 0;
 	estimationNumberInputDisplay.value = 0;
 	hotelRoomRate = 168;
-	doEstimationCalculations();
-	hotelRoomRateDisplay.value = hotelRoomRate;
-	hotelRoomRateDisplay.readOnly = true;
-	requestedAmount = 0;
 }
 
 
