@@ -274,7 +274,8 @@ function resetVenueDisplays(){
 $(document).ready(function () {
     $("#00N0b000007v1mP").datepicker({
         // dateFormat: "dd-M-yy",
-        minDate: 90,
+		minDate: 90,
+		maxDate: new Date(2020, 8, 30),
         onSelect: function () {
             var dt2 = $('#00N0b000007v1qc');
             var startDate = $(this).datepicker('getDate');
@@ -293,7 +294,7 @@ $(document).ready(function () {
             else if (dateDiff > 30){
                     dt2.datepicker('setDate', startDate);
             }
-            //sets dt2 maxDate to the last day of 30 days window
+			//sets dt2 maxDate to the last day of 30 days window
             // dt2.datepicker('option', 'maxDate', startDate);
             //first day which can be selected in dt2 is selected date in dt1
             dt2.datepicker('option', 'minDate', minDate);
