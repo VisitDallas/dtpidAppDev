@@ -37,6 +37,7 @@ hotelRoomRateDisplay.addEventListener("change", function(){
 	doEstimationCalculations();
 	doTotalBudgetCalculations();
 	overPercentage();
+	setFundsDisplayNumbers(requestedAmount);
 });
 
 dtpidFundsPreApprovedDisplay.addEventListener("change", function(){

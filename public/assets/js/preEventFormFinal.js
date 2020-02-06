@@ -154,9 +154,10 @@ previousFundingCheck.addEventListener("change", function(){
 	}
 })
 
+//OCA has been renamed to OAC, but keeps old name
 ocaCheckbox.addEventListener("change", function(){
 	if (ocaCheckbox.checked) {
-		ocaField.value = "OCA";
+		oacField.value = "OAC";
 	} else {
 		ocaField.value = "";
 	}
