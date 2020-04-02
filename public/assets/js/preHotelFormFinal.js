@@ -17,6 +17,7 @@ var mobileValue = "";
 var currentDate = document.getElementById("00N0b00000CclxK");
 var startDate = "";
 var stimulusDisplay = document.getElementById("stimulus");
+var enterDate = document.getElementById("enterDate");
 
 hotelRoomNightDisplay.addEventListener("change", function(){
 	hotelRoomNightDisplay.value = parseFloat(hotelRoomNightDisplay.value.replace(/,/g, ''));
@@ -60,7 +61,7 @@ function doMaximumEligibleCalculations(){
 		console.log(startDate.getFullYear());
 		console.log("doing stimulus winner");
 		totalRevenue = hotelRoomNight * hotelRoomRate;
-		finalDTPIDAmount = Math.floor(totalRevenue / 10 * 1.15);
+		finalDTPIDAmount = Math.floor(totalRevenue / 10 * 1.50);
 		//hiding help text
 		stimulusDisplay.classList.remove("hide");
 	} else {
@@ -130,6 +131,7 @@ $(document).ready(function () {
 			dt2.datepicker('option', 'minDate', minDate);
 			console.log("In date picker: " + startDate.getFullYear());
 			console.log("In date picker, full date:" + startDate);
+			enterDate.classList.add("hide");
 			doMaximumEligibleCalculations();
 			checkRequested();
 			displayMaximumEligibleCalculations();
