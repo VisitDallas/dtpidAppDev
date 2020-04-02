@@ -14,7 +14,7 @@
   "author": "Nick Askam",
   "license": "ISC",
   "dependencies": {
-    "ejs": "^2.7.4",
+    "ejs": "^3.0.2",
     "express": "^4.17.1"
   },
   "engine": {
