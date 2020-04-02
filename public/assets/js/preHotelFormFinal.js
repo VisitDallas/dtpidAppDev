@@ -15,6 +15,8 @@ var labelIfYes = document.getElementById("labelIfYes");
 var mobileDisplay = document.getElementById("mobile");
 var mobileValue = "";
 var currentDate = document.getElementById("00N0b00000CclxK");
+var startDate = "";
+var stimulusDisplay = document.getElementById("stimulus");
 
 hotelRoomNightDisplay.addEventListener("change", function(){
 	hotelRoomNightDisplay.value = parseFloat(hotelRoomNightDisplay.value.replace(/,/g, ''));
@@ -53,8 +55,22 @@ mobileDisplay.addEventListener("change", function(){
 })
 
 function doMaximumEligibleCalculations(){
-	totalRevenue = hotelRoomNight * hotelRoomRate;
-	finalDTPIDAmount = Math.floor(totalRevenue / 10);
+	//stimulus award checker
+	if(startDate.getFullYear() === 2020) {
+		console.log(startDate.getFullYear());
+		console.log("doing stimulus winner");
+		totalRevenue = hotelRoomNight * hotelRoomRate;
+		finalDTPIDAmount = Math.floor(totalRevenue / 10 * 1.15);
+		//hiding help text
+		stimulusDisplay.classList.remove("hide");
+	} else {
+		console.log("not applicable for stimulus award");
+		totalRevenue = hotelRoomNight * hotelRoomRate;
+		finalDTPIDAmount = Math.floor(totalRevenue / 10);
+		//removing help text
+		stimulusDisplay.classList.add("hide");
+	}
+	
 	checkIfOverMax();
 }
 
@@ -96,9 +112,7 @@ $(document).ready(function () {
         minDate: 0,
         onSelect: function () {
             var dt2 = $('#00N0b000007v1qc');
-            var startDate = $(this).datepicker('getDate');
-            //add 30 days to selected date
-            startDate.setDate(startDate.getDate() + 30);
+            startDate = $(this).datepicker('getDate');
             var minDate = $(this).datepicker('getDate');
             var dt2Date = dt2.datepicker('getDate');
             //difference in days. 86400 seconds in day, 1000 ms in second
@@ -113,7 +127,12 @@ $(document).ready(function () {
                     dt2.datepicker('setDate', startDate);
             }
             //first day which can be selected in dt2 is selected date in dt1
-            dt2.datepicker('option', 'minDate', minDate);
+			dt2.datepicker('option', 'minDate', minDate);
+			console.log("In date picker: " + startDate.getFullYear());
+			console.log("In date picker, full date:" + startDate);
+			doMaximumEligibleCalculations();
+			checkRequested();
+			displayMaximumEligibleCalculations();
         }
     });
     $('#00N0b000007v1qc').datepicker({
