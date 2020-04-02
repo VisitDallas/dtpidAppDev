@@ -1,7 +1,9 @@
+const http = require('http');
+
 let express = require("express");
 var app = express();
 
-app.use(static("public"));
+app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 app.get("/prehotelform", function(req, res){
