@@ -4,6 +4,9 @@ var hotelRoomRateDisplay = document.getElementById("00N0b000009gotC");
 var hotelRoomRate = 0;
 var totalRevenueDisplay = document.getElementById("totalRevenueDisplay");
 var totalRevenue = 0;
+var coefficientROIDisplay = document.getElementById("coefROI");
+var coefficientROIInput = document.getElementById("00N0b00000CoagY");
+var coefficientROI = 0;
 var finalDTPIDAmountDisplay = document.getElementById("finalDTPIDAmountDisplay");
 var finalDTPIDAmount = 0;
 var amountRequestedDisplay = document.getElementById("00N0b00000BQW8Z");
@@ -16,7 +19,6 @@ var mobileDisplay = document.getElementById("mobile");
 var mobileValue = "";
 var currentDate = document.getElementById("00N0b00000CclxK");
 var startDate = "";
-var stimulusDisplay = document.getElementById("stimulus");
 var enterDate = document.getElementById("enterDate");
 
 hotelRoomNightDisplay.addEventListener("change", function(){
@@ -57,21 +59,19 @@ mobileDisplay.addEventListener("change", function(){
 
 function doMaximumEligibleCalculations(){
 	//stimulus award checker
+	totalRevenue = hotelRoomNight * hotelRoomRate;
+
 	if(startDate.getFullYear() === 2020) {
 		console.log(startDate.getFullYear());
 		console.log("doing stimulus winner");
-		totalRevenue = hotelRoomNight * hotelRoomRate;
-		finalDTPIDAmount = Math.floor(totalRevenue / 10 * 1.50);
-		//hiding help text
-		stimulusDisplay.classList.remove("hide");
+		coefficientROI = 6.67;
 	} else {
 		console.log("not applicable for stimulus award");
-		totalRevenue = hotelRoomNight * hotelRoomRate;
-		finalDTPIDAmount = Math.floor(totalRevenue / 10);
-		//removing help text
-		stimulusDisplay.classList.add("hide");
+		coefficientROI = 10;
 	}
-	
+	coefficientROIDisplay.textContent = coefficientROI;
+	coefficientROIInput.value = coefficientROI;
+	finalDTPIDAmount = Math.ceil(totalRevenue / coefficientROI);
 	checkIfOverMax();
 }
 

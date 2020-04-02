@@ -1,11 +1,11 @@
-<% include partials/header.ejs %>
+<%- include ('partials/header.ejs') %>
 
 	<link rel="stylesheet" type="text/css" href="assets/css/postEventFormFinal.css">
 	<title>Post Event Hotel Reimbursement Form</title>
 </head>
 <body>
 
-	<% include partials/navbar.ejs %>
+	<%- include ('partials/navbar.ejs') %>
 
 	<div class="container">
 
@@ -37,7 +37,7 @@
 	
 		<!-- Event/Contact Information -->
 		<div>
-			<% include partials/contactInformation.ejs %>
+			<%- include ('partials/contactInformation.ejs') %>
 
 				<h3>Organization Information:</h3>
 
@@ -62,7 +62,7 @@
 					</div>
 				</div>
 
-				<% include partials/eventInformation.ejs %> 
+				<%- include ('partials/eventInformation.ejs') %> 
 
 				<div class="form-group">
 					<label class="col-sm-2 control-label">OCA Funding:</label>
@@ -197,13 +197,13 @@
  			</table>
  		</div>
 
-	 	<% include partials/eventBudgetTopTable.ejs %>
+	 	<%- include ('partials/eventBudgetTopTable.ejs') %>
 						<td>
 							<strong>$</strong>
 							<!-- Hotel Post Total Other: -->
 							<input id="00N0b00000CbolR" class="form-control totEBudget" name="00N0b00000CbolR" size="9" type="text" value="0" required/>
 						</td>
-		<% include partials/eventBudgetBottomTable.ejs %>
+		<%- include ('partials/eventBudgetBottomTable.ejs') %>
 
 		<div>
 			<h3>How you spent the DTPID Dollars:</h3>
@@ -296,4 +296,4 @@
 	<script type="text/javascript" src="assets/js/postEventFormFinal.js"></script>
 	<script type="text/javascript" src="assets/js/events.js"></script>
 
-	<% include partials/footer.ejs %> 
+	<%- include ('partials/footer.ejs') %> 
