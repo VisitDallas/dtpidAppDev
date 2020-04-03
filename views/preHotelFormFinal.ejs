@@ -83,15 +83,16 @@
 
 	<!-- Header -->
 	<div>
-		<h2>DTPID Pre-Event Hotel Application and Budget Form</h2>
-		<h4><em>Submitted 60 days prior to Event Start</em></h4>
+		<h2>Dallas TPID Pre-Event Hotel Application</h2>
+		<h4><em>Submit 60 days prior to Event Start</em></h4>
 	</div>
 	
 	<div class="form-horizontal">
 
 	<div class="jumbotron">
-		<p>For events starting before December 31, 2020, the ROI amounts are being reduced to 1 to 6.67 instead of 1 to 10</p>
-		<p>This will increase Maximum Eligible DTPID Amount</p>
+		<p>Limited Dallas TPID COVID-19 stimulus plan reduces the ROI to 6.67:1 from 10:1 for any event starting before 
+			January 1, 2021, in an effort to increase the maximum eligible incentive.</p>
+		<p>The standard ROI of 10:1 will resume on January 1, 2021.</p>
 	</div>
 
 	<!-- Hotel Information -->
@@ -181,22 +182,6 @@
 		</div>
 	</div>
 
-	<div class="form-group form-inline hide">
-		<!-- <label>Event Start Date:</label>
-		<span class="dateInput dateOnlyInput">
-		<input id="00N0b000007v1mP" class="form-control" name="00N0b000007v1mP" size="12" type="text" placeholder="mm/dd/yyyy" required/></span> -->
-
-		<!-- <label>Event End Date:</label>
-		<span class="dateInput dateOnlyInput">
-		<input id="00N0b000007v1qc" class="form-control" name="00N0b000007v1qc" size="12" type="text" placeholder="mm/dd/yyyy" required/></span> -->
-
-		<!-- <label>Event Decision Date:</label>
-		<span class="dateInput dateOnlyInput"><input  id="00N0b00000Bf6oE" class="form-control" name="00N0b00000Bf6oE" size="12" type="text" placeholder="mm/dd/yyyy" required/></span>
-
-		<label>If Yes, Last Event Date:</label>
-		<span class="dateInput dateOnlyInput"><input id="00N0b0000082rE7" class="form-control" name="00N0b0000082rE7" size="12" type="text" placeholder="mm/dd/yyyy"/></span> -->
-	</div>
-
 	<div class="form-group">
 		<label class="col-sm-2 control-label">
 			Event Start Date:
@@ -251,23 +236,23 @@
 </div>
 
 	<div>
-		<h4>Available Funding and Return on Investment: <!-- <em>(attach contracted/requested room flow)</em> --></h4>
+		<h4>Calculate the Maximum Eligible Dallas TPID Amount <!-- <em>(attach contracted/requested room flow)</em> --></h4>
 
 		<ul>
-			<li>Your anticipated number of <strong>Hotel Room Nights</strong> as determined by contracted room block</li>
+			<li>Your anticipated number of <strong>Contracted Room Nights</strong> as determined by contracted room block</li>
 			<li>Multiplied by <strong>Contracted Hotel Rate</strong> to get <strong>Total Revenue</strong></li>
-			<li>For Events before 12/31/2020, divide <strong>Total Revenue</strong> by 10 to get the 6.67:1 required ROI = <strong>Maximum Eligible DTPID Amount</strong></li>
-			<li>For Events after 12/31/2020, divide <strong>Total Revenue</strong> by 10 to get the 10:1 required ROI = <strong>Maximum Eligible DTPID Amount</strong></li>
+			<li>For Events before 1/1/2021, divide <strong>Total Revenue</strong> by 6.67 for <strong>Maximum Eligible DTPID Amount (limited DTPID stimulus)</strong></li>
+			<li>For Events after or on 1/1/2021, divide <strong>Total Revenue</strong> by 10 for <strong>Maximum Eligible DTPID Amount</strong></li>
 		</ul>
 	</div>
 
 	<!-- Math section to calculate Room Revenue-->
 	<div class="form-group form-inline inLine">
- 	 	<p class="inLine"><strong>Hotel Room Nights</strong>
+ 	 	<p class="inLine"><strong>Contracted Room Nights</strong>
 			<input  id="00N0b000009got7" class="form-control inLine" name="00N0b000009got7" size="7" type="text" placeholder="0" required/>
-	 		<strong>Avg. Room Rate </strong>$
+	 		x <strong>Contracted Room Rate </strong>$
 			<input  id="00N0b000009gotC" class="form-control inLine" name="00N0b000009gotC" size="4" type="text" placeholder="0" required/>	
-		= <strong>Total Revenue $<span id="totalRevenueDisplay">0</span> / <span id="coefROI">10</span> (for ROI)</strong> =</p>
+		= <strong>Total Revenue $<span id="totalRevenueDisplay">0</span> / <span id="coefROI">10</span></strong> =</p>
 	</div>
 	<div class="hide">
 		<p>Pre App ROI Coefficient:<input  id="00N0b00000CoagY" name="00N0b00000CoagY" size="20" type="text" /><br></p>
