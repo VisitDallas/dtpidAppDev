@@ -8,6 +8,7 @@ var coefficientROIDisplay = document.getElementById("coefROI");
 var coefficientROIInput = document.getElementById("00N0b00000CoagY");
 var coefficientROI = 0;
 var finalDTPIDAmountDisplay = document.getElementById("finalDTPIDAmountDisplay");
+var finalDTPIDAmountDisplay2 = document.getElementById("finalDTPIDAmountDisplay2");
 var finalDTPIDAmount = 0;
 var amountRequestedDisplay = document.getElementById("00N0b00000BQW8Z");
 var amountRequested = 0;
@@ -85,6 +86,7 @@ function checkRequested(){
 function displayMaximumEligibleCalculations(){
 	totalRevenueDisplay.textContent = numberWithCommas(totalRevenue);
 	finalDTPIDAmountDisplay.textContent = numberWithCommas(finalDTPIDAmount);
+	finalDTPIDAmountDisplay2.textContent = numberWithCommas(finalDTPIDAmount);
 }
 
 function checkIfOverMax(){
