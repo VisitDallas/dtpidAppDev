@@ -202,10 +202,39 @@
 
 	<div class="form-group">
 		<label class="col-sm-2 control-label">
+			Peak Hotel Room Nights for Event:
+		</label>
+		<div class="col-sm-9">
+			<input id="00N0b00000CnNpw" class="form-control" name="00N0b00000CnNpw" size="20" type="text" placeholder="0" required/>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">
+			Total Sleeping Rooms at Property:
+		</label>
+		<div class="col-sm-9">
+			<input id="00N0b00000Cmy6U" class="form-control" name="00N0b00000Cmy6U" size="20" type="text" placeholder="0" required/>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">
+			% of Inventory at Peak: (Must be greater than or equal to 10%)
+		</label>
+		<div class="col-sm-9">
+			<input id="shownInventoryAtPeakDisplay" class="form-control" name="shownInventoryAtPeakDisplay" size="20" type="text" placeholder="0" required readonly/>
+			<li id="setHigherPercentage" class="hide showcaseRed">This number has to be higher than 10% for application to be accepted</li>
+			<li id="addRooms" class="hide showcaseRed">Input "Total Sleeping Rooms at Property"</li>
+		</div>
+	</div>
+
+	<div class="form-group hide">
+		<label class="col-sm-2 control-label">
 			% of Inventory at Peak:
 		</label>
 		<div class="col-sm-9">
-			<input id="00N0b000009gTge" class="form-control" name="00N0b000009gTge" size="20" type="text" placeholder="0" required/>
+			<input id="00N0b000009gTge" class="form-control" name="00N0b000009gTge" size="20" type="text" placeholder="0" required readonly/>
 		</div>
 	</div>
 
@@ -220,7 +249,7 @@
 
 	<div class="form-group">
 		<label class="col-sm-2 control-label">
-			Previously in Dallas: (check if yes):
+			Previously in Dallas (check if yes):
 		</label>
 		<div class="col-sm-3">
 			<input id="00N0b0000082r6W" class="form-control" name="00N0b0000082r6W" type="checkbox" value="1" />
@@ -239,14 +268,15 @@
 
 	<!-- Math section to calculate Room Revenue-->
 	<div class="form-group form-inline inLine">
- 	 	<p class="inLine">
+		<p class="inLine">
 			<strong>Contracted Room Nights</strong>
 			<input  id="00N0b000009got7" class="form-control inLine" name="00N0b000009got7" size="7" type="text" placeholder="0" required/>
-	 		x <strong>Contracted Room Rate </strong>$
+			x <strong>Contracted Room Rate </strong>$
 			<input  id="00N0b000009gotC" class="form-control inLine" name="00N0b000009gotC" size="4" type="text" placeholder="0" required/>	
 		= <strong>Total Revenue $<span id="totalRevenueDisplay">0</span> / <span id="coefROI">10</span></strong> =
 		<strong>$<span id="finalDTPIDAmountDisplay">0</span> Maximum Dallas TPID Incentive</strong>  
 		</p>
+		<p id="enterDate" class="showcaseRed">Please enter an Event Start Date</p>
 	</div>
 	<div class="hide">
 		<p>Pre App ROI Coefficient:<input  id="00N0b00000CoagY" name="00N0b00000CoagY" size="20" type="text" /><br></p>
@@ -262,12 +292,6 @@
 	</div>
 
 	<!-- Math section to calculate total eligible DTPID Amount-->
-	<div class="center">
-	 	<h4>
-	 	
-		</h4>
-		<p id="enterDate" class="showcaseRed">Please enter an Event Start Date</p>			
- 	</div>
 
 	<div class="form-group form-inline">
 		<label>Dallas TPID Incentive Funds Requested: $</label>
@@ -276,24 +300,22 @@
 		<p>This cannot be higher than the Maximum Dallas TPID Incentive ($<span id="finalDTPIDAmountDisplay2">0</span>)</p>
 	</div>
 
-	
-
 	<div class="form-group">
 		<label>Brief Event Description: <em>(include competing cities)</em></label>
 		<textarea  id="00N0b0000082K90" class="form-control" name="00N0b0000082K90" rows="5" type="text" wrap="soft" required></textarea><br>
 
-		<label>Brief Description of Dallas TPID Incentive:</label>
+		<label>Brief Description of DTPID Funding:</label>
 		<textarea  id="00N0b000009fiCp" class="form-control" name="00N0b000009fiCp" rows="5" type="text" wrap="soft" required></textarea><br>
 
 	</div>
 
 	<p>When submitting this Individual Hotel Incentive Application, signatories acknowledge the information contained herein as accurate and agree to review of all related event materials and final support documentation prior to DTPID payment.</p>
 
-	<p class="disclaimer"><strong>If you have any questions, please contact Sheryl Budelier at (214) 571-1337 or <a href="mailto:sheryl@visitdallas.com">Sheryl@visitdallas.com</a></strong></p>
+	<p class="disclaimer"><strong>If you have any questions, please contact Sheryl Budelier at (214) 571-1337 or <a href="mailto:Sheryl@dallastpid.com">Sheryl@dallastpid.com</a></strong></p>
 
 	<p class="disclaimer"><strong>Print this screen for your records before submitting. (Control+P or Command+P)</strong></p>
 	
-	<input class="btn btn-primary btn-lg btn-block" type="submit" name="submit">
+	<input type="submit" class="btn btn-primary btn-lg btn-block" id="submit" name="submit" disabled>
 </div>
 </form>
 

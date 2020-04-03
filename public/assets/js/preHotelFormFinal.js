@@ -22,6 +22,56 @@ var currentDate = document.getElementById("00N0b00000CclxK");
 var startDate = "";
 var enterDate = document.getElementById("enterDate");
 
+let peakHotelRoomNightsDisplay = document.getElementById("00N0b00000CnNpw");
+let peakHotelRoomNights = 0;
+let totalSleepingRoomsDisplay = document.getElementById("00N0b00000Cmy6U");
+let totalSleepingRooms = 0;
+let percentInventoryAtPeakDisplay = document.getElementById("00N0b000009gTge");
+let percentInventoryAtPeak = 0;
+let shownPercentInventoryAtPeakDisplay = document.getElementById("shownInventoryAtPeakDisplay");
+let submitButton = document.getElementById("submit");
+let setHigherPercentage = document.getElementById("setHigherPercentage");
+let addRooms = document.getElementById("addRooms");
+//let approvedAmount = document.getElementById("00N0b00000Cnohu");
+
+peakHotelRoomNightsDisplay.addEventListener("change", function(){
+	peakHotelRoomNightsDisplay.value = parseFloat(peakHotelRoomNightsDisplay.value.replace(/,/g, ''));
+	peakHotelRoomNights = Number(this.value);
+	calculatePercentInventory();
+	underPercentage();
+	peakHotelRoomNightsDisplay.value = numberWithCommas(peakHotelRoomNights);
+});
+
+totalSleepingRoomsDisplay.addEventListener("change", function(){
+	totalSleepingRoomsDisplay.value = parseFloat(totalSleepingRoomsDisplay.value.replace(/,/g, ''));
+	totalSleepingRooms = Number(this.value);
+	calculatePercentInventory();
+	underPercentage();
+	totalSleepingRoomsDisplay.value = numberWithCommas(totalSleepingRooms);
+});
+
+function calculatePercentInventory() {
+	percentInventoryAtPeak = Math.round((peakHotelRoomNights / totalSleepingRooms) * 100);
+	percentInventoryAtPeakDisplay.value = percentInventoryAtPeak;
+	shownPercentInventoryAtPeakDisplay.value = percentInventoryAtPeak + "%";
+}
+
+function underPercentage(){
+	if (percentInventoryAtPeak < 10){
+		setHigherPercentage.classList.remove("hide");
+		addRooms.classList.add("hide");
+		submitButton.setAttribute("disabled", "true");
+	} else if (percentInventoryAtPeak == "Infinity"){
+		setHigherPercentage.classList.add("hide");
+		addRooms.classList.remove("hide");
+		submitButton.setAttribute("disabled", "true");
+	} else {
+		setHigherPercentage.classList.add("hide");
+		addRooms.classList.add("hide");
+		submitButton.removeAttribute("disabled");
+	}
+}
+
 hotelRoomNightDisplay.addEventListener("change", function(){
 	hotelRoomNightDisplay.value = parseFloat(hotelRoomNightDisplay.value.replace(/,/g, ''));
 	hotelRoomNight = Number(this.value);
@@ -298,10 +348,6 @@ function inputCurrentDate(){
 window.onload = function() {
   inputCurrentDate();
 };
-
-
-
-
 
 
 
